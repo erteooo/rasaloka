@@ -15,20 +15,18 @@ body {
 header {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
-    position: relative;
-    padding: 10px 0;
 }
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: center;
 }
 
 nav ul li {
@@ -48,11 +46,8 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
+/* Icons di pojok kanan atas */
 .icons {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
     display: flex;
     align-items: center;
 }
@@ -66,22 +61,45 @@ nav ul li a.active {
     height: 30px;
 }
 
+/* Style untuk konten Home */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 50px);
 }
 
+/* Layout for logo and text in home section */
 .home-content {
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Pusatkan logo dan teks secara horizontal */
+    align-items: center;     /* Pusatkan secara vertikal */
+    height: 100vh;           /* Tinggi sama dengan viewport untuk full-screen effect */
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;     /* Pastikan logo dan teks sejajar secara vertikal */
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
+    width: 300px;             /* Sesuaikan ukuran logo */
+    height: auto;
+    margin-right: 50px;      /* Beri jarak antara logo dan teks */
 }
+
+.text h1 {
+    margin: 0;
+    font-size: 80px;         /* Ukuran teks "RASALOKA" */
+    color: #4d4d4d;
+}
+
+.text p {
+    margin: 0;
+    font-size: 30px;
+    color: #414141;
+}
+
 
 h1 {
     font-size: 48px;
