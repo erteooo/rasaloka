@@ -21,6 +21,8 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    justify-content: center; /* Memusatkan daftar navigasi */
+    flex-grow: 1; /* Mengizinkan ul untuk tumbuh dan mengambil ruang yang tersedia */
 }
 
 nav ul li {
@@ -36,6 +38,7 @@ nav ul li a {
 .icons {
     display: flex;
     gap: 15px;
+    justify-content: flex-end;
 }
 
 .icons img {
