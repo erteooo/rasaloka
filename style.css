@@ -21,7 +21,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: center; /* Tetap di tengah */
+    justify-content: center;
     align-items: center;
 }
 
@@ -48,11 +48,10 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
-/* Ikon di pojok kanan atas */
 .icons {
     position: absolute;
     top: 50%;
-    right: 20px; /* Tetap di kanan */
+    right: 20px;
     transform: translateY(-50%);
     display: flex;
     align-items: center;
@@ -67,12 +66,11 @@ nav ul li a.active {
     height: 30px;
 }
 
-/* Style untuk konten Home */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 70px); /* Tinggi total halaman minus header */
+    height: calc(100vh - 70px);
 }
 
 .home-content {
@@ -87,7 +85,7 @@ main {
 
 h1 {
     font-size: 48px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', Courier, monospace;
 }
 
 p {
