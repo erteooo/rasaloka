@@ -1,21 +1,23 @@
 /* Style untuk header dan navigasi */
 header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    position: relative;
+    background-color: #f8f8f8;
     padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    gap: 20px;
 }
 
 nav ul li {
@@ -28,7 +30,6 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Icons di pojok kanan atas */
 .icons {
     display: flex;
     gap: 15px;
@@ -39,25 +40,14 @@ nav ul li a {
     height: 30px;
 }
 
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 70px);
-}
-
-/* Layout for logo and text in home section */
+/* Style untuk home section */
 .home-content {
     display: flex;
-    justify-content: center; /* Pusatkan logo dan teks secara horizontal */
-    align-items: center;     /* Pusatkan secara vertikal */
-    height: 100vh;           /* Tinggi sama dengan viewport untuk full-screen effect */
-}
-
-.logo-text {
-    display: flex;
-    align-items: center;     /* Pastikan logo dan teks sejajar secara vertikal */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fafafa;
+    text-align: center;
 }
 
 .logo-text {
@@ -66,14 +56,15 @@ main {
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
 }
 
-h1 {
-    font-size: 48px;
-    font-family: 'Arial', Courier, monospace;
+.text h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #333;
 }
 
 .text p {
