@@ -68,9 +68,9 @@ nav ul li a.active {
 
 main {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: calc(100vh - 70px);
+    justify-content: center;
+    gap: 10px;
 }
 
 .home-content {
