@@ -1,59 +1,37 @@
-/* Reset default styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Style untuk body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
-
-/* Header dan navigation bar */
+/* Style untuk header dan navigasi */
 header {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
+    position: relative;
+    padding: 10px 0;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    margin-right: 20px;
+    display: inline;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: black;
-    padding: 10px 20px;
-    font-size: 18px;
-}
-
-nav ul li a.active {
-    background-color: #555;
-    color: white;
-    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
 }
 
 /* Icons di pojok kanan atas */
 .icons {
     display: flex;
-    align-items: center;
-}
-
-.icons a {
-    margin-left: 10px;
+    gap: 15px;
 }
 
 .icons img {
@@ -61,12 +39,12 @@ nav ul li a.active {
     height: 30px;
 }
 
-/* Style untuk konten Home */
 main {
     display: flex;
+    align-items: center;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 70px);
 }
 
 /* Layout for logo and text in home section */
@@ -82,31 +60,36 @@ main {
     align-items: center;     /* Pastikan logo dan teks sejajar secara vertikal */
 }
 
+.logo-text {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
-    width: 300px;             /* Sesuaikan ukuran logo */
-    height: auto;
-    margin-right: 50px;      /* Beri jarak antara logo dan teks */
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
 }
-
-.text h1 {
-    margin: 0;
-    font-size: 80px;         /* Ukuran teks "RASALOKA" */
-    color: #4d4d4d;
-}
-
-.text p {
-    margin: 0;
-    font-size: 30px;
-    color: #414141;
-}
-
 
 h1 {
     font-size: 48px;
     font-family: 'Arial', Courier, monospace;
 }
 
-p {
-    font-size: 24px;
-    font-weight: bold;
+.text p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 }
