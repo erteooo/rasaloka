@@ -1,8 +1,11 @@
-/* Style untuk header dan navigasi */
 header {
     background-color: #f8f8f8;
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(94, 92, 92, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav {
@@ -40,7 +43,6 @@ nav ul li a {
     height: 30px;
 }
 
-/* Style untuk home section */
 .home-content {
     display: flex;
     justify-content: center;
@@ -56,20 +58,20 @@ nav ul li a {
 }
 
 .logo {
-    width: 80px;
+    width: 250px;
     height: auto;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 .text h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 72px;
     color: #333;
 }
 
 .text p {
     margin: 0;
-    font-size: 16px;
+    font-size: 32px;
     color: #666;
 }
 
