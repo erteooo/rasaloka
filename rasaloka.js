@@ -6,46 +6,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fungsi untuk menampilkan popup
     const showPopup = () => {
-        authPopup.style.display = 'block'; // Tampilkan popup
-        isMouseInProfileOrPopup = true; // Kursor berada di dalam area
+        authPopup.classList.add('active');
     };
 
     // Fungsi untuk menyembunyikan popup
     const hidePopup = () => {
-        authPopup.style.display = 'none'; // Sembunyikan popup
-        isMouseInProfileOrPopup = false; // Kursor meninggalkan area
+        authPopup.classList.remove('active');
     };
 
     // Event ketika mouse berada di atas ikon profil
-    profileIcon.addEventListener("mouseover", function() {
+    profileIcon.addEventListener("mouseenter", function() {
         showPopup();
     });
 
     // Event ketika mouse meninggalkan ikon profil
-    profileIcon.addEventListener("mouseout", function() {
-        // Tunggu sebentar sebelum menutup untuk memastikan kursor tidak ke popup
+    profileIcon.addEventListener("mouseleave", function() {
         setTimeout(() => {
             if (!isMouseInProfileOrPopup) {
                 hidePopup();
             }
-        }, 200); // Delay singkat untuk transisi
+        }, 200);
     });
 
     // Event ketika mouse berada di atas popup
-    authPopup.addEventListener("mouseover", function() {
-        isMouseInProfileOrPopup = true; // Kursor berada di dalam popup
+    authPopup.addEventListener("mouseenter", function() {
+        isMouseInProfileOrPopup = true;
     });
 
     // Event ketika mouse meninggalkan popup
-    authPopup.addEventListener("mouseout", function() {
-        // Tunggu sebentar sebelum menutup untuk memastikan kursor tidak kembali ke ikon profil
-        setTimeout(() => {
-            if (!isMouseInProfileOrPopup) {
-                hidePopup();
-            }
-        }, 300); // Delay singkat untuk transisi
+    authPopup.addEventListener("mouseleave", function() {
+        isMouseInProfileOrPopup = false;
+        hidePopup();
     });
 });
-window.onload = function() {
-    document.getElementById('loading-screen').style.display = 'none';
-};
