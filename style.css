@@ -44,6 +44,8 @@ header {
     list-style-type: none;
     display: flex;
     justify-content: center;
+    justify-content: center; /* Memusatkan daftar navigasi */
+    flex-grow: 1; /* Mengizinkan ul untuk tumbuh dan mengambil ruang yang tersedia */
 }
 
 .navul-navbar li {
@@ -70,9 +72,9 @@ header {
     transform: scale(1.2);
 }
 
-.icon {
-    display: inline-block;
-    margin-left: 15px;
+.icons {
+    display: flex;
+    gap: 15px;
 }
 
 .icon img {
