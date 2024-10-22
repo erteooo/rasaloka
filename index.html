@@ -5,33 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RasaLoka - Rempah Terbaik Nusantara</title>
     <link rel="stylesheet" href="style.css">
+    <script src="rasaloka.js" defer></script>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Utama -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">PRODUCT</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#">SUPPORT</a></li>
+        <h1 class="header-title">RASALOKA</h1>
+        <!-- Navbar-->
+        <nav class="navbar">
+            <ul class="navul-navbar">
+                <li><a href="beranda.html">Beranda</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                <li><a href="bantuan.html">Bantuan</a></li>
             </ul>
-            <div class="icons">
-                <a href="#" class="rasaloka-profile"><img src="images/profile.png" alt="Profile"></a>
-                <a href="#" class="rasaloka-cart"><img src="images/cart.png" alt="Cart"></a>
-            </div>
         </nav>
+        <!-- Ikon-->
+        <div class="header-icons">
+            <div class="icon">
+                <a href="#" class="rasaloka-profile" aria-label="Profile">
+                    <img src="images/profile.png" alt="Ikon Profil" />
+                </a>
+            </div>
+            <div class="icon">   
+                <a href="keranjang.html" class="rasaloka-cart" aria-label="Cart">
+                    <img src="images/cart.png" alt="Ikon Keranjang" />
+                </a>
+            </div>
+        </div>
     </header>
 
+    <!-- Pop-up Login -->
+    <div id="auth-popup" class="auth-popup">
+        <a href="login.html" class="auth-button google-login">Login with Google</a>
+        <a href="signup.html" class="auth-button google-signup">Sign Up with Google</a>
+    </div>
+
+    <!-- Main Content -->
     <main>
-        <div class="home-content">
-            <div class="logo-text">
-                <img src="images/logo.png" alt="RasaLoka Logo" class="logo">
-                <div class="text">
-                    <h1>RASALOKA</h1>
-                    <p>REMPAH TERBAIK NUSANTARA</p>
+        <div class="welcome-section">
+            <div class="welcome-content">
+                <img src="images/logo.png" alt="Logo RasaLoka" class="logo" />
+                <div class="intro-text">
+                    <h2>RASALOKA</h2>
+                    <p>Rempah Terbaik Nusantara</p>
+                    <a href="produk.html" class="cta-button">Jelajahi Produk</a>
                 </div>
             </div>
         </div>
+
+        <!-- Produk List (Contoh) -->
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/rempah1.jpg" alt="Rempah 1" class="product-image">
+                <div class="product-name">Rempah 1</div>
+                <div class="product-price">Rp 50.000</div>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+            <div class="product-card">
+                <img src="images/rempah2.jpg" alt="Rempah 2" class="product-image">
+                <div class="product-name">Rempah 2</div>
+                <div class="product-price">Rp 75.000</div>
+                <button  class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+            <div class="product-card">
+                <img src="images/rempah3.jpg" alt="Rempah 3" class="product-image">
+                <div class="product-name">Rempah 3</div>
+                <div class="product-price">Rp 60.000</div>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+        </div>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Ingin menjadi penjual?</p> <a href="bantuan.html" class="linkrev">Ya</a>
+    </footer>
 </body>
 </html>
