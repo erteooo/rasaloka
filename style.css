@@ -131,6 +131,36 @@ header {
     transform: scale(1.05);
 }
 
+/* Pop-up Keranjang */
+.cart-popup {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100%;
+    width: 300px;
+    background-color: #ffffff;
+    border-left: 5px solid #d09800;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 200;
+    transition: transform 0.5s ease;
+}
+
+.cart-popup.active {
+    transform: translateX(-100%);
+}
+
+/* Isi Pop-up Keranjang */
+.cart-popup h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cart-popup p {
+    font-size: 1rem;
+    color: #666;
+}
+
 /* Main Content */
 .welcome-section {
     flex: 1; /* Mengisi ruang antara header dan footer */
