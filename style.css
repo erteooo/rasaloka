@@ -1,11 +1,9 @@
-/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
 html, body {
     height: 100%;
     margin: 0;
@@ -22,7 +20,7 @@ html, body {
 
 main {
     flex: 1;
-    display: flex; /* Tambahkan ini untuk mengatur flex pada main */
+    display: flex;
 }
 
 /* Header */
@@ -35,7 +33,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Menambahkan ini agar responsif */
+    flex-wrap: wrap;
 }
 
 .header-title {
@@ -44,7 +42,7 @@ header {
 }
 
 .navbar {
-    margin: 0 20px; /* Menghapus margin kiri dan kanan untuk responsive */
+    margin: 0 20px;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -58,7 +56,7 @@ header {
 }
 
 .navul-navbar li {
-    margin: 0px 15px; /* Mengurangi margin untuk elemen navbar */
+    margin: 0px 15px;
 }
 
 .navul-navbar a {
@@ -163,18 +161,18 @@ header {
 
 /* Main Content */
 .welcome-section {
-    flex: 1; /* Mengisi ruang antara header dan footer */
-    display: flex; /* Mengatur agar isi di dalamnya bisa diatur */
-    justify-content: center; /* Menempatkan konten di tengah */
-    align-items: center; /* Mengatur vertikal agar di tengah */
-    padding: 20px; /* Tambahkan padding di sekitar konten */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .welcome-content {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    border: 3px solid #000000; /* Mengatur lebar border menjadi 3px */
+    border: 3px solid #000000;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px; 
     padding: 30px; 
@@ -186,22 +184,22 @@ header {
 
 .logo {
     border: #000000;
-    width: 150px; /* Ukuran logo */
+    width: 150px;
     margin-left: 80px;
-    margin-right: 50px; /* Ruang antara logo dan intro text */
+    margin-right: 50px;
 }
 
 .intro-text {
     font-size: 130%;
-    text-align: left; /* Rata kiri */
-    margin: 0; /* Hilangkan margin di sekitar intro text */
-    flex-grow: 1; /* Membiarkan intro text mengisi ruang yang tersisa */
+    text-align: left;
+    margin: 0;
+    flex-grow: 1;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    margin-top: 20px; /* Tambahkan margin atas untuk memberi jarak dari intro text */
+    margin-top: 20px;
     background-color: #007bff;
     color: white;
     text-decoration: none;
@@ -234,33 +232,33 @@ footer {
 }
 
 .link-hover:hover {
-    color: #00fb50; /* Mengubah warna saat hover */
-    transform: scale(1.1); /* Mengubah ukuran sedikit saat hover */
+    color: #00fb50;
+    transform: scale(1.1);
 }
 
-/* Media Queries untuk Responsivitas */
+/* Responsif */
 @media (max-width: 768px) {
     .header-title {
-        font-size: 1.2rem; /* Mengurangi ukuran font pada header */
+        font-size: 1.2rem;
     }
 
     .navbar {
-        flex-direction: column; /* Menjadikan navbar menjadi kolom pada layar kecil */
-        margin: 10px 0; /* Menambahkan margin pada navbar */
+        flex-direction: column;
+        margin: 10px 0;
     }
 
     .navul-navbar li {
-        margin: 5px 0; /* Mengurangi margin antar item navbar */
+        margin: 5px 0;
     }
 
     .welcome-content {
-        flex-direction: column; /* Mengubah konten menjadi kolom */
-        width: 90%; /* Memperlebar konten pada layar kecil */
-        height: auto; /* Mengubah tinggi menjadi otomatis */
+        flex-direction: column;
+        width: 90%;
+        height: auto;
     }
 
     .logo {
-        margin: 0 0 20px 0; /* Mengatur margin pada logo */
+        margin: 0 0 20px 0;
     }
 }
 

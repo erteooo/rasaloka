@@ -1,25 +1,26 @@
+    // Profil ikon popup //
 document.addEventListener("DOMContentLoaded", function() {
     const profileIcon = document.querySelector(".rasaloka-profile");
     const authPopup = document.getElementById('auth-popup');
     
     let isMouseInProfileOrPopup = false;
 
-    // Fungsi untuk menampilkan popup
+    // Menampilkan popup
     const showPopup = () => {
         authPopup.classList.add('active');
     };
 
-    // Fungsi untuk menyembunyikan popup
+    // Menyembunyikan popup
     const hidePopup = () => {
         authPopup.classList.remove('active');
     };
 
-    // Event ketika mouse berada di atas ikon profil
+    // Mouse berada di ikon profil
     profileIcon.addEventListener("mouseenter", function() {
         showPopup();
     });
 
-    // Event ketika mouse meninggalkan ikon profil
+    // Mouse meninggalkan ikon profil
     profileIcon.addEventListener("mouseleave", function() {
         setTimeout(() => {
             if (!isMouseInProfileOrPopup) {
@@ -28,39 +29,40 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 200);
     });
 
-    // Event ketika mouse berada di atas popup
+    // Mouse berada di popup
     authPopup.addEventListener("mouseenter", function() {
         isMouseInProfileOrPopup = true;
     });
 
-    // Event ketika mouse meninggalkan popup
+    // Mouse meninggalkan popup
     authPopup.addEventListener("mouseleave", function() {
         isMouseInProfileOrPopup = false;
         hidePopup();
     });
 });
 
+    // Keranjang popup //
 document.addEventListener("DOMContentLoaded", function() {
     const cartIcon = document.querySelector(".rasaloka-cart");
     const cartPopup = document.getElementById('cart-popup');
     let isMouseInCartOrPopup = false;
 
-    // Fungsi untuk menampilkan popup
+    // Menampilkan popup
     const showCartPopup = () => {
         cartPopup.classList.add('active');
     };
 
-    // Fungsi untuk menyembunyikan popup
+    // Menyembunyikan popup
     const hideCartPopup = () => {
         cartPopup.classList.remove('active');
     };
 
-    // Event ketika mouse berada di atas ikon keranjang
+    // Mouse berada di ikon keranjang
     cartIcon.addEventListener("mouseenter", function() {
         showCartPopup();
     });
 
-    // Event ketika mouse meninggalkan ikon keranjang
+    // Mouse meninggalkan ikon keranjang
     cartIcon.addEventListener("mouseleave", function() {
         setTimeout(() => {
             if (!isMouseInCartOrPopup) {
@@ -69,12 +71,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 200);
     });
 
-    // Event ketika mouse berada di atas popup keranjang
+    // Mouse berada di popup keranjang
     cartPopup.addEventListener("mouseenter", function() {
         isMouseInCartOrPopup = true;
     });
 
-    // Event ketika mouse meninggalkan popup keranjang
+    // Mouse meninggalkan popup keranjang
     cartPopup.addEventListener("mouseleave", function() {
         isMouseInCartOrPopup = false;
         hideCartPopup();
