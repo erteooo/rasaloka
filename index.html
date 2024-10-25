@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RasaLoka - Rempah Terbaik Nusantara</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <!-- Header Utama -->
@@ -23,29 +22,30 @@
         <!-- Ikon-->
         <div class="header-icons">
             <div class="icon">
-                <a href="#" class="rasaloka-profile" aria-label="Profile">
-                    <img src="images/profile.png" alt="Ikon Profil" />
-                </a>
+                <svg class="rasaloka-profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                </svg>    
+                <!-- Pop-up Login -->
+                <div id="auth-popup" class="auth-popup">
+                    <a href="login.html" class="auth-button google-login">Login with Google</a>
+                    <a href="signup.html" class="auth-button google-signup">Sign Up with Google</a>
+                </div>
             </div>
             <div class="icon">   
-                <a href="keranjang.html" class="rasaloka-cart" aria-label="Cart">
-                    <img src="images/cart.png" alt="Ikon Keranjang" />
-                </a>
+                <svg class="rasaloka-cart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                <!-- Pop-up Keranjang -->
+                <div id="cart-popup" class="cart-popup">
+                    <h3>Keranjang Kamu</h3>
+                    <p>Yah, kamu belum login</p>
+                    <div class="cartbtn">
+                        <a href="login.html" class="login">Login</a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-
-    <!-- Pop-up Login -->
-    <div id="auth-popup" class="auth-popup">
-        <a href="login.html" class="auth-button google-login">Login with Google</a>
-        <a href="signup.html" class="auth-button google-signup">Sign Up with Google</a>
-    </div>
-
-    <!-- Pop-up Keranjang -->
-    <div id="cart-popup" class="cart-popup">
-        <h3>Keranjang Kamu</h3>
-        <p>Yah, kamu belum login</p>
-    </div>
 
     <!-- Main Content -->
     <main>
@@ -62,12 +62,11 @@
     </main>
 
     <!-- Footer -->
-        <footer>
-            <p>Jika kamu adalah penjual,</p> 
-            <a href="bantuan.html" class="linkrev link-hover">klik disini!</a>
-        </footer>
+    <footer>
+        <p>Jika kamu adalah penjual,</p> 
+        <a href="bantuan.html" class="linkrev link-hover">klik disini!</a>
+    </footer>
 
-    
     <script src="rasaloka.js"></script>
 </body>
 </html>
