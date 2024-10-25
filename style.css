@@ -49,25 +49,34 @@ header {
 }
 
 .navul-navbar {
+    font-family: 'Trebuchet MS';
     list-style-type: none;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
-    padding: 0;
+    padding: 10px;
+    margin: 10px 0;
 }
 
 .navul-navbar li {
+    color: #ffffff;
+    border: #000000;
     margin: 0px 15px;
 }
 
 .navul-navbar a {
     text-decoration: none;
     font-size: 1.2rem;
-    color: rgb(0, 0, 0);
-    transition: color 0.3s;
+    color: #ffffff;
+    transition: color 0.5s ease, transform 0.5 ease;
 }
 
 .navul-navbar a:hover {
-    color: #ffffff;
+    color: #d09800;
+    transform: scale(1.2);
 }
 
 /* Ikon */
@@ -219,6 +228,7 @@ header {
 
 .intro-text {
     font-size: 130%;
+    font-family: "Arial", 'Trebuchet MS';
     text-align: left;
     margin: 0;
     flex-grow: 1;
