@@ -115,6 +115,7 @@ header {
     display: block;
     background-color: #007bff;
     color: white;
+    text-decoration: none;
     padding: 15px;
     margin: 10px 0;
     border: none;
@@ -126,7 +127,7 @@ header {
 
 .auth-button:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
+    transform: scale(1);
 }
 
 /* Pop-up Keranjang */
@@ -160,8 +161,8 @@ header {
     padding: 15px;
     margin: 10px 0;
     border: none;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.5s ease;
 }
@@ -233,6 +234,7 @@ header {
     border-radius: 5px;
     justify-content: center;
     transition: background-color 0.3s, transform 0.5s;
+
 }
 
 .cta-button:hover {
