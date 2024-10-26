@@ -84,6 +84,7 @@ header {
 /* Ikon */
 .header-icons {
     margin-right: 20px;
+    transition: transform 0.5s;
 }
 
 .header-icons a:hover {
@@ -129,8 +130,13 @@ header {
     text-decoration: none;
     padding: 15px;
     margin: 10px 0;
+    height: 100%;
+    width: 200px;
+    max-width: 100%;
+    z-index: 200;
     border: none;
     border-radius: 5px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     text-align: center;
     transition: color 0.3s ease, transform 0.5s ease;
@@ -159,6 +165,10 @@ header {
     grid-template-rows: 70px 1fr 70px;
 }
 
+.cart-popup.active {
+    transform: translateX(-100%);
+}
+
 .cart-popup .cartbtn {
     display: inline-block;
     text-align: center;
@@ -181,10 +191,6 @@ header {
 .cartbtn .login:hover {
     color: #d09800;
     transform: scale(1.05);
-}
-
-.cart-popup.active {
-    transform: translateX(-100%);
 }
 
 /* Isi Pop-up Keranjang */
@@ -290,6 +296,34 @@ footer {
 
 /* Responsif */
 @media (max-width: 768px) {
+    
+    .auth-popup {
+        display: block;
+        flex-direction: row;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 30%;
+        margin: 0;
+    }
+    
+    .cart-popup {
+        background-color: #ffffff;
+        border-left: 5px solid #d09800;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100%;
+        width: 300px;
+        max-width: 100%;
+        box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        z-index: 200;
+        transition: transform 0.5s ease;
+        display: grid;
+        grid-template-rows: 70px 1fr 70px;
+    }
+    
     .navbar {
         flex-direction: column;
         align-items: center;
