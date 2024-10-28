@@ -23,9 +23,9 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Menengahkan secara horizontal */
-    justify-content: center; /* Menengahkan secara vertikal */
-    gap: 20px; /* Jarak antara navbar dan welcome-content */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 /* Header */
@@ -47,8 +47,10 @@ header {
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
     width: 100%;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
 }
 
