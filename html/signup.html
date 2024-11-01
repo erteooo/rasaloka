@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - RASALOKA</title>
+    <title>Daftar - RASALOKA</title>
     <link rel="stylesheet" href="../css/form.css">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 </head>
@@ -21,26 +21,32 @@
                 <li><a href="bantuan.html">Bantuan</a></li>
             </ul>
         </nav>
-
+                
         <div class="form-container">
-            <form id="login-form" method="POST" action="/submit-login" aria-labelledby="login-form-title">
-                <h2 id="login-form-title">Login ke RASALOKA</h2>
+            <form id="signup-form" method="POST" action="/submit-signup" aria-labelledby="signup-form-title">
+                <h2 id="signup-form-title">Selamat datang di RASALOKA</h2>
                 
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text">Masukkan email yang valid.</small>
+                    <label for="username">Email:</label>
+                    <input type="email" id="username" name="username" required aria-describedby="usernameHelp">
+                    <small id="usernameHelp" class="form-text">Masukkan email yang valid.</small>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required aria-describedby="passwordHelp">
-                    <small id="passwordHelp" class="form-text">Masukkan password Anda.</small>
+                    <small id="passwordHelp" class="form-text">Password harus minimal 8 karakter.</small>
                 </div>
 
-                <button type="submit" class="btn-submit">Login</button>
+                <div class="form-group">
+                    <label for="confirm-password">Konfirmasi Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password " required aria-describedby="confirm-passwordHelp">
+                    <small id="confirm-passwordHelp" class="form-text">Masukkan password yang sama.</small>
+                </div>
+
+                <button type="submit" class="btn-submit">Daftar</button>
             </form>
-            <p>Belum punya akun? <a href="signup.html">Daftar</a></p>
+            <p>Sudah punya akun? <a href="login.html">Login</a></p>
         </div>
     </main>
 

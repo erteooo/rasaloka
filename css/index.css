@@ -288,7 +288,7 @@ footer {
     text-decoration: none;
     color: rgb(255, 255, 255);
     background-color: #000000;
-    transition: color 0.5s, transform 0,7s;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .link-hover:hover {
