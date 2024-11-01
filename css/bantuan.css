@@ -1,0 +1,179 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya Umum */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../images/bground.jpg');
+    background-color: #fdfdfd;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #c79004;
+    padding: 0;
+    text-align: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #f0f0f0;
+    font-size: 1.5rem;
+}
+
+nav {
+    font-family: 'Trebuchet MS';
+    list-style-type: none;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #d09800;
+    transform: scale(1.2);
+ }
+
+/* Bagian Konten Utama */
+.bantuan-content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.faq-item {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+    margin-bottom: 10px;
+    color: #ff6700;
+}
+
+.faq-item p {
+    margin-top: 5px;
+    color: #555;
+}
+
+.faq-item a {
+    color: #ff6700;
+    text-decoration: none;
+}
+
+.faq-item a:hover {
+    text-decoration: none;
+}
+
+/* Bagian Kontak */
+.kontak {
+    background-color: #ffedd5;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.kontak h2 {
+    margin-bottom: 10px;
+    color: #ff6700;
+}
+
+.kontak ul {
+    list-style: none;
+    padding: 0;
+}
+
+.kontak li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: #ff6700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #d09800;
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+    gap: 5px;
+}
+
+.footer-toogle {
+    display: inline-flex;
+    background-color: #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 0;
+    gap: 8px;
+}
+
+/* Link dengan efek hover */
+.link-hover {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    transition: color 0.5s, transform 0,7s;
+}
+
+.link-hover:hover {
+    color: #d09800;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .bantuan-content {
+        padding: 10px;
+    }
+
+    .kontak {
+        padding: 15px;
+    }
+}
