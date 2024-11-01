@@ -36,8 +36,12 @@
             font-size: 1.1em;
         }
 
+        /* Navigation Bar */
         nav {
-            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            background-color: #c79004;
+            padding: 10px 0;
         }
 
         nav a {
@@ -50,6 +54,7 @@
 
         nav a:hover, nav a.active {
             text-decoration: underline;
+            color: #fff;
         }
 
         /* Bagian Konten Utama */
@@ -140,8 +145,11 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            
             nav a {
-                display: block;
                 margin: 10px 0;
             }
 
@@ -159,14 +167,14 @@
     <header>
         <h1>Bantuan ~RasaLoka~</h1>
         <p>Temukan solusi dan informasi tentang layanan kami</p>
-        <nav>
-            <a href="index.html">Beranda</a>
-            <a href="produk.html">Produk</a>
-            <a href="tentang-kami.html">Tentang Kami</a>
-            <a href="bantuan.html" class="active">Bantuan</a>
-        </nav>
     </header>
-    
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="tentang kami.html">Tentang Kami</a>
+        <a href="bantuan.html" class="active">Bantuan</a>
+    </nav>
 
     <section class="bantuan-content">
         <h2>Pertanyaan Umum</h2>
@@ -193,7 +201,7 @@
 
         <div class="faq-item">
             <h3>5. Apa yang Harus Dilakukan Jika Barang Rusak?</h3>
-            <p>Hubungi kami melalui <a href="TRPL 23A1:cs@rasaloka.com">email</a> atau WhatsApp dalam waktu 2x24 jam setelah menerima barang.</p>
+            <p>Hubungi kami melalui <a href="mailto:cs@rasaloka.com">email</a> atau WhatsApp dalam waktu 2x24 jam setelah menerima barang.</p>
         </div>
     </section>
 
@@ -201,8 +209,8 @@
         <h2>Kontak Kami</h2>
         <p>Butuh bantuan lebih lanjut? Hubungi kami:</p>
         <ul>
-            <li>Email: <a href="TRPL 23A1:cs@rasaloka.com">cs@rasaloka.com</a></li>
-            <li>WhatsApp: <a href="https://wa.me/62812XXXXXX">0812-XXXX-XXXX</a></li>
+            <li>Email: <a href="mailto:cs@rasaloka.com">cs@rasaloka.com</a></li>
+            <li>WhatsApp: <a href="https://wa.me/6289678232885">0812-7823-2885</a></li>
             <li>Jam Operasional: Senin - Jumat, 08.00 - 17.00 WIB</li>
         </ul>
     </section>
