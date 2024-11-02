@@ -4,217 +4,9 @@
    Produk - RASALOKA
   </title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            background-color: #d4a017;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header h1 {
-            margin: 0;
-            color: black;
-        }
-        .header .icons {
-            font-size: 20px;
-            position: relative;
-        }
-        .header .icons i {
-            margin-left: 15px;
-            color: black;
-            cursor: pointer;
-        }
-        .nav {
-            background-color: black;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-        .search-bar {
-            padding: 20px;
-            text-align: center;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .search-bar input {
-            width: 50%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            outline: none;
-        }
-        .search-bar button {
-            padding: 10px;
-            border: none;
-            background-color: #d4a017;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-        .product-container {
-            display: flex;
-            overflow-x: auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .product {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            margin-right: 20px;
-            padding: 10px;
-            text-align: center;
-            min-width: 200px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .product h3 {
-            margin: 10px 0;
-            font-size: 18px;
-            color: black;
-        }
-        .product p {
-            margin: 5px 0;
-            font-size: 16px;
-            color: #555;
-        }
-        .product .btn {
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-        }
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-            position: relative;
-        }
-        .modal-content h2 {
-            margin-top: 0;
-        }
-        .modal-content .btn {
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: block;
-            margin-top: 10px;
-            text-align: center;
-        }
-        .cart-modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 700px;
-            border-radius: 10px;
-            position: relative;
-        }
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .cart-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-        }
-        .cart-item .item-info {
-            flex-grow: 1;
-            margin-left: 10px;
-        }
-        .cart-item .item-info h4 {
-            margin: 0;
-            font-size: 16px;
-        }
-        .cart-item .item-info p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #555;
-        }
-        .cart-item .quantity {
-            display: flex;
-            align-items: center;
-        }
-        .cart-item .quantity button {
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .cart-item .quantity input {
-            width: 40px;
-            text-align: center;
-            border: 1px solid #ddd;
-            margin: 0 5px;
-        }
-        .cart-total {
-            text-align: right;
-            margin-top: 20px;
-            border-top: 1px solid #ddd;
-            padding-top: 10px;
-        }
-        .cart-total h3 {
-            margin: 0;
-        }
-        .cart-total .btn {
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            color: black;
-        }
-  </style>
- </head>
+  <link rel="stylesheet" href="produk.css">
+
+  </head>
  <body>
   <div class="header">
    <h1>
@@ -228,16 +20,16 @@
    </div>
   </div>
   <div class="nav">
-   <a href="#">
+   <a href="index.html">
     Beranda
    </a>
-   <a href="#">
+   <a href="produk.html">
     Produk
    </a>
    <a href="#">
     Tentang Kami
    </a>
-   <a href="#">
+   <a href="bantuan.html">
     Bantuan
    </a>
   </div>
@@ -250,7 +42,7 @@
   </div>
   <div class="product-container" id="productContainer">
    <div class="product" data-name="Produk 1">
-    <img alt="Produk 1" height="450" src="andaliman.jpg" width="450"/>
+    <img alt="Produk 1" height="450" src="images/andaliman.jpg" width="450"/>
     <h3>
      Andaliman
     </h3>
@@ -262,7 +54,7 @@
     </a>
    </div>
    <div class="product" data-name="Produk 2">
-    <img alt="Produk 2" height="450" src="bunga lawang.jpg" width="450"/>
+    <img alt="Produk 2" height="450" src="images/bunga lawang.jpg" width="450"/>
     <h3>
      Bunga Lawang
     </h3>
@@ -274,7 +66,7 @@
     </a>
    </div>
    <div class="product" data-name="Produk 3">
-    <img alt="Produk 3" height="450" src="jintan hitam.jpg" width="450"/>
+    <img alt="Produk 3" height="450" src="images/jintan hitam.jpg" width="450"/>
     <h3>
      Jintan Hitam
     </h3>
@@ -286,7 +78,7 @@
     </a>
    </div>
    <div class="product" data-name="Produk 4">
-    <img alt="Produk 4" height="450" src="cengkeh.jpg" width="450"/>
+    <img alt="Produk 4" height="450" src="images/cengkeh.jpg" width="450"/>
     <h3>
      Cengkeh
     </h3>
@@ -298,7 +90,7 @@
     </a>
    </div>
    <div class="product" data-name="Produk 5">
-    <img alt="Produk 5" height="450" src="kayu manis (1).jpg" width="450"/>
+    <img alt="Produk 5" height="450" src="images/kayu manis (1).jpg " width="450"/>
     <h3>
      Kayu Manis
     </h3>
@@ -335,7 +127,7 @@
      Keranjang Belanja
     </h2>
     <div class="cart-item">
-     <img alt="Produk 1" height="50" src="andaliman.jpg" width="50"/>
+     <img alt="Produk 1" height="50" src="images/andaliman.jpg" width="50"/>
      <div class="item-info">
       <h4>
        Andaliman
@@ -355,7 +147,7 @@
      </div>
     </div>
     <div class="cart-item">
-     <img alt="Produk 2" height="50" src="bunga lawang.jpg" width="50"/>
+     <img alt="Produk 2" height="50" src="images/bunga lawang.jpg" width="50"/>
      <div class="item-info">
       <h4>
        Bunga Lawang
@@ -375,7 +167,7 @@
      </div>
     </div>
     <div class="cart-item">
-     <img alt="Produk 3" height="50" src="jintan hitam.jpg" width="50"/>
+     <img alt="Produk 3" height="50" src="images/jintan hitam.jpg" width="50"/>
      <div class="item-info">
       <h4>
        Jintan Hitam
