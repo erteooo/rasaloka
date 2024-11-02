@@ -15,21 +15,21 @@
    <div class="icons">
     <i class="fas fa-user" onclick="document.getElementById('profileModal').style.display='block'">
     </i>
-    <i class="fas fa-shopping-cart" onclick="document.getElementById('cartModal').style.display='block'">
+    <i class="fas fa-shopping-cart" onclick="toggleCartModal()">
     </i>
    </div>
   </div>
   <div class="nav">
-   <a href="index.html">
+   <a href="#">
     Beranda
    </a>
-   <a href="produk.html">
+   <a href="#">
     Produk
    </a>
-   <a href="tentang kami.html">
+   <a href="#">
     Tentang Kami
    </a>
-   <a href="bantuan.html">
+   <a href="#">
     Bantuan
    </a>
   </div>
@@ -42,62 +42,62 @@
   </div>
   <div class="product-container" id="productContainer">
    <div class="product" data-name="Produk 1">
-    <img alt="Produk 1" height="450" src="images/andaliman.jpg" width="450"/>
+    <img alt="Andaliman" height="450" src="images/andaliman.jpg" width="450"/>
     <h3>
      Andaliman
     </h3>
     <p>
      Rp 100.000
     </p>
-    <a class="btn" href="detail produk.html">
+    <a class="btn" href="detail.html?product=andaliman">
      Lihat Detail
     </a>
    </div>
    <div class="product" data-name="Produk 2">
-    <img alt="Produk 2" height="450" src="images/bunga lawang.jpg" width="450"/>
+    <img alt="Bunga lawang" height="450" src="images/bunga lawang.jpg" width="450"/>
     <h3>
      Bunga Lawang
     </h3>
     <p>
      Rp 25.000
     </p>
-    <a class="btn" href="detail produk.html">
+    <a class="btn" href="detail.html?product=bunga-lawang">
      Lihat Detail
     </a>
    </div>
    <div class="product" data-name="Produk 3">
-    <img alt="Produk 3" height="450" src="images/jintan hitam.jpg" width="450"/>
+    <img alt="Jintan hitam" height="450" src="images/jintan hitam.jpg" width="450"/>
     <h3>
      Jintan Hitam
     </h3>
     <p>
      Rp 45.000
     </p>
-    <a class="btn" href="#">
+    <a class="btn" href="detail.html?product=jintan-hitam">
      Lihat Detail
     </a>
    </div>
    <div class="product" data-name="Produk 4">
-    <img alt="Produk 4" height="450" src="images/cengkeh.jpg" width="450"/>
+    <img alt="Cengkeh" height="450" src="images/cengkeh.jpg" width="450"/>
     <h3>
      Cengkeh
     </h3>
     <p>
      Rp 60.000
     </p>
-    <a class="btn" href="#">
+    <a class="btn" href="detail.html?product=cengkeh">
      Lihat Detail
     </a>
    </div>
    <div class="product" data-name="Produk 5">
-    <img alt="Produk 5" height="450" src="images/kayu manis (1).jpg " width="450"/>
+    <img alt="kayu manis" height="450" src="images/kayu manis (1).jpg" width="450"/>
     <h3>
      Kayu Manis
     </h3>
     <p>
      Rp 30.000
     </p>
-    <a class="btn" href="#">
+    <a class="btn" href="detail.html?product=kayu-manis">
      Lihat Detail
     </a>
    </div>
@@ -111,7 +111,7 @@
      Login
     </h2>
     <a class="btn" href="#">
-     Login with Google
+     Masuk
     </a>
     <a class="btn" href="#">
      Sign Up with Google
@@ -126,71 +126,16 @@
     <h2>
      Keranjang Belanja
     </h2>
-    <div class="cart-item">
-     <img alt="Produk 1" height="50" src="images/andaliman.jpg" width="50"/>
-     <div class="item-info">
-      <h4>
-       Andaliman
-      </h4>
-      <p>
-       Rp 100.000
-      </p>
-     </div>
-     <div class="quantity">
-      <button onclick="decreaseQuantity(this)">
-       -
-      </button>
-      <input onchange="updateTotal()" readonly="" type="number" value="1"/>
-      <button onclick="increaseQuantity(this)">
-       +
-      </button>
-     </div>
+    <div id="cartItems">
     </div>
-    <div class="cart-item">
-     <img alt="Produk 2" height="50" src="images/bunga lawang.jpg" width="50"/>
-     <div class="item-info">
-      <h4>
-       Bunga Lawang
-      </h4>
-      <p>
-       Rp 25.000
-      </p>
-     </div>
-     <div class="quantity">
-      <button onclick="decreaseQuantity(this)">
-       -
-      </button>
-      <input onchange="updateTotal()" readonly="" type="number" value="1"/>
-      <button onclick="increaseQuantity(this)">
-       +
-      </button>
-     </div>
-    </div>
-    <div class="cart-item">
-     <img alt="Produk 3" height="50" src="images/jintan hitam.jpg" width="50"/>
-     <div class="item-info">
-      <h4>
-       Jintan Hitam
-      </h4>
-      <p>
-       Rp 45.000
-      </p>
-     </div>
-     <div class="quantity">
-      <button onclick="decreaseQuantity(this)">
-       -
-      </button>
-      <input onchange="updateTotal()" readonly="" type="number" value="1"/>
-      <button onclick="increaseQuantity(this)">
-       +
-      </button>
-     </div>
+    <div class="empty-cart">
+     Keranjang masih kosong.
     </div>
     <div class="cart-total">
      <h3>
       Total: Rp
       <span id="total">
-       170.000
+       0
       </span>
      </h3>
      <a class="btn" href="#">
@@ -223,6 +168,24 @@
                 total += price * quantity;
             });
             document.getElementById('total').innerText = total.toLocaleString('id-ID');
+            if (total > 0) {
+                document.querySelector('.cart-total').style.display = 'block';
+                document.querySelector('.empty-cart').style.display = 'none';
+            } else {
+                document.querySelector('.cart-total').style.display = 'none';
+                document.querySelector('.empty-cart').style.display = 'block';
+            }
+        }
+
+        function toggleCartModal() {
+            var cartModal = document.getElementById('cartModal');
+            var cartItems = document.getElementById('cartItems');
+            if (cartItems.children.length === 0) {
+                document.querySelector('.empty-cart').style.display = 'block';
+            } else {
+                document.querySelector('.empty-cart').style.display = 'none';
+            }
+            cartModal.style.display = 'block';
         }
 
         window.onclick = function(event) {
