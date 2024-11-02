@@ -1,0 +1,43 @@
+/* style.css */
+
+/* Ubah latar belakang halaman menjadi kuning */
+body {
+    background-color: #FFEB3B; /* Warna kuning terang */
+    color: #333; /* Warna teks default yang cukup kontras */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pastikan teks dan elemen lainnya tetap terbaca */
+.header-title, .navbar a, .footer-toggle, h2, h3, label {
+    color: #ffffff; /* Warna teks lebih gelap untuk kontras yang lebih baik */
+}
+
+/* Tambahkan gaya untuk form */
+.contact-form-section {
+    background-color: #FFF59D; /* Warna kuning yang lebih lembut untuk kontras */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    color: #333;
+}
+
+.cta-button {
+    background-color: #FBC02D; /* Warna kuning yang sedikit lebih gelap */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #F9A825;
+}
