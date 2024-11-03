@@ -35,10 +35,9 @@ header {
     width: 100%;
     padding: 15px 0;
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .header-title {
@@ -85,6 +84,7 @@ header {
 
 /* Ikon */
 .header-icons {
+    display: inline-flex;
     margin-right: 20px;
     transition: transform 0.5s;
 }
@@ -94,12 +94,15 @@ header {
 }
 
 .icon {
-    display: inline-block;
+    display: inline-flex;
     margin-left: 15px;
+    gap: 10px;
 }
 
 .icon img {
+    display: inline-flex;
     width: 30px;
+    gap: 10px;
 }
 
 /* Popup Login */

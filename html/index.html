@@ -1,77 +1,104 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RasaLoka - Rempah Terbaik Nusantara</title>
-    <link rel="stylesheet" href="../css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
     <!-- Header Utama -->
     <header>
-        <h1 class="header-title">RASALOKA</h1>
+      <h1 href="index.html" class="header-title">RASALOKA</h1>
 
-        <!-- Ikon-->
-        <div class="header-icons">
-            <div class="icon">
-                <svg href="login.html" class="rasaloka-profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                </svg>    
-                <!-- Pop-up Login -->
-                <div id="auth-popup" class="auth-popup">
-                    <a href="login.html" class="auth-button google-login">Masuk</a>
-                    <a href="signup.html" class="auth-button google-signup">Daftar</a>
-                </div>
-            </div>
-            <div class="icon">   
-                <svg href="keranjang.html" class="rasaloka-cart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-                </svg>
-                <!-- Pop-up Keranjang -->
-                <div id="cart-popup" class="cart-popup">
-                    <h3>Keranjang Kamu</h3>
-                    <p>Tidak tersedia</p>
-                    <div class="cartbtn">
-                        <a href="login.html" class="login">Login</a>
-                    </div>
-                </div>
-            </div>
+      <!-- Navbar-->
+      <nav class="navbar">
+        <ul class="navul-navbar">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="produk.html">Produk</a></li>
+          <li><a href="tentang-kami.html">Tentang Kami</a></li>
+          <li><a href="bantuan.html">Bantuan</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ikon-->
+      <div class="header-icons">
+        <div class="icon">
+          <svg
+            href="form.html"
+            class="rasaloka-profile"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+            />
+          </svg>
+          <!-- Pop-up Login -->
+          <div id="auth-popup" class="auth-popup">
+            <a href="form.html" class="auth-button google-login"
+              >Masuk / Daftar</a
+            >
+          </div>
         </div>
+        <div class="icon">
+          <svg
+            href="keranjang.html"
+            class="rasaloka-cart"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+            />
+          </svg>
+          <!-- Pop-up Keranjang -->
+          <div id="cart-popup" class="cart-popup">
+            <h3>Keranjang Kamu</h3>
+            <p>Tidak tersedia</p>
+            <div class="cartbtn">
+              <a href="login.html" class="login">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- Main Content -->
-    <main>\
-                <!-- Navbar-->
-                <nav class="navbar">
-                    <ul class="navul-navbar">
-                        <li><a href="index.html">Beranda</a></li>
-                        <li><a href="produk.html">Produk</a></li>
-                        <li><a href="tentang-kami.html">Tentang Kami</a></li>
-                        <li><a href="bantuan.html">Bantuan</a></li>
-                    </ul>
-                </nav>
-
-                <!--Main Section-->
-        <div class="welcome-section">
-            <div class="welcome-content">
-                <img src="../images/logo.png" alt="Logo RasaLoka" class="logo" />
-                <div class="intro-text">
-                    <h2>RASALOKA</h2>
-                    <p>Rempah Terbaik Nusantara</p>
-                    <a href="produk.html" class="cta-button">Jelajahi Produk</a>
-                </div>
-            </div>
+    <main>
+      <!--Main Section-->
+      <div class="welcome-section">
+        <div class="welcome-content">
+          <img src="../images/logo.png" alt="Logo RasaLoka" class="logo" />
+          <div class="intro-text">
+            <h2>RASALOKA</h2>
+            <p>Rempah Terbaik Nusantara</p>
+            <a href="produk.html" class="cta-button">Jelajahi Produk</a>
+          </div>
         </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-toogle">
-            <p> Jika kamu adalah penjual, </p> 
-            <a href="bantuan.html" class="link-hover">klik disini</a>
-        </div>
+      <div class="footer-toogle">
+        <p>Jika kamu adalah penjual,</p>
+        <a href="bantuan.html" class="link-hover">klik disini</a>
+      </div>
     </footer>
 
     <script src="../js/index.js"></script>
-</body>
+  </body>
 </html>
