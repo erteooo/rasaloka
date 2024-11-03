@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - RASALOKA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/produk.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <!-- Header Utama -->
+    <header>
+        <h1 href="index.html" class="header-title">RASALOKA</h1>
+  
+        <!-- Navbar-->
+        <nav class="navbar">
+          <ul class="navul-navbar">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="tentang-kami.html">Tentang Kami</a></li>
+            <li><a href="bantuan.html">Bantuan</a></li>
+          </ul>
+        </nav>
+  
+        <!-- Ikon-->
+        <div class="header-icons">
+          <div class="icon">
+            <svg
+              href="form.html"
+              class="rasaloka-profile"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-width="2"
+                d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+            <!-- Pop-up Login -->
+
+          </div>
+          <div class="icon">
+            <svg
+              href="keranjang.html"
+              class="rasaloka-cart"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+              />
+            </svg>
+            <!-- Pop-up Keranjang -->
+            <div id="cart-popup" class="cart-popup">
+              <h3>Keranjang Kamu</h3>
+              <p>Tidak tersedia</p>
+              <div class="cartbtn">
+                <a href="login.html" class="login">Login</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <div class="search-bar">
+        <input id="searchInput" placeholder="Cari produk..." type="text"/>
+        <button onclick="searchProduct()">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <div class="product-container" id="productContainer">
+        <div class="product" data-name="Produk 1">
+            <img alt="Produk 1" height="450" src="../images/andaliman.jpg" width="450"/>
+            <h3>Andaliman</h3>
+            <p>Rp 100.000</p>
+            <a class="btn" href="detailproduk1.html">Lihat Detail</a>
+        </div>
+        <div class="product" data-name="Produk 2">
+            <img alt="Produk 2" height="450" src="../images/bunga lawang.jpg" width="450"/>
+            <h3>Bunga Lawang</h3>
+            <p>Rp 25.000</p>
+            <a class="btn" href="detailproduk2.html">Lihat Detail</a>
+        </div>
+        <div class="product" data-name="Produk 3">
+            <img alt="Produk 3" height="450" src="../images/jintan hitam.jpg" width="450"/>
+            <h3>Jintan Hitam</h3>
+            <p>Rp 45.000</p>
+            <a class="btn" href="detailproduk3.html">Lihat Detail</a>
+        </div>
+        <div class="product" data-name="Produk 4">
+            <img alt="Produk 4" height="450" src="../images/cengkeh.jpg" width="450"/>
+            <h3>Cengkeh</h3>
+            <p>Rp 60.000</p>
+            <a class="btn" href="detailproduk4.html">Lihat Detail</a>
+        </div>
+        <div class="product" data-name="Produk 5">
+            <img alt="Produk 5" height="450" src="../images/kayu manis (1).jpg" width="450"/>
+            <h3>Kayu Manis</h3>
+            <p>Rp 30.000</p>
+            <a class="btn" href="detailproduk5.html">Lihat Detail</a>
+        </div>
+    </div>
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('profileModal').style.display='none'">×</span>
+            <h2>Login</h2>
+            <a class="btn" href="#">Login with Google</a>
+            <a class="btn" href="#">Sign Up with Google</a>
+        </div>
+    </div>
+    <div class="modal" id="cartModal">
+        <div class="cart-modal-content">
+            <span class="close" onclick="document.getElementById('cartModal').style.display='none'">×</span>
+            <h2>Keranjang Belanja</h2>
+            <div class="cart-item">
+                <img alt="Produk 1" height="50" src="../images/andaliman.jpg" width="50 "/>
+                <div class="item-info">
+                    <h4>Andaliman</h4>
+                    <p>Rp 100.000</p>
+                </div>
+                <div class="quantity">
+                    <button onclick="decreaseQuantity(this)">-</button>
+                    <input onchange="updateTotal()" readonly="" type="number" value="1"/>
+                    <button onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img alt="Produk 2" height="50" src="../images/bunga lawang.jpg" width="50"/>
+                <div class="item-info">
+                    <h4>Bunga Lawang</h4>
+                    <p>Rp 25.000</p>
+                </div>
+                <div class="quantity">
+                    <button onclick="decreaseQuantity(this)">-</button>
+                    <input onchange="updateTotal()" readonly="" type="number" value="1"/>
+                    <button onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img alt="Produk 3" height="50" src="../images/jintan hitam.jpg" width="50"/>
+                <div class="item-info">
+                    <h4>Jintan Hitam</h4>
+                    <p>Rp 45.000</p>
+                </div>
+                <div class="quantity">
+                    <button onclick="decreaseQuantity(this)">-</button>
+                    <input onchange="updateTotal()" readonly="" type="number" value="1"/>
+                    <button onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <div class="cart-total">
+                <h3>Total: Rp <span id="total">170.000</span></h3>
+                <a class="btn" href="#">Buat Pesanan</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/produk.js"></script>
+</body>
+</html>

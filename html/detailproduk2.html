@@ -4,7 +4,7 @@
    Detail Produk - RASALOKA
   </title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="detail produk.css">
+  <link rel="stylesheet" href="../css/detailproduk.css">
 
  </head>
  <body>
@@ -15,16 +15,16 @@
    </i>
   </div>
   <div class="product-detail">
-   <img alt="jintan hitam" height="300" src="images/jintan hitam.jpg" width="300"/>
+   <img alt="bunga lawang" height="300" src="../images/bunga lawang.jpg" width="300"/>
    <div class="product-info">
     <h2>
-     Jintan Hitam
+     Bunga Lawang
     </h2>
     <p class="price">
-     Rp 45.000
+     Rp 25.000
     </p>
     <p class="stock">
-     Stok: 20
+     Stok: 54
     </p>
     <div class="quantity">
      <button onclick="decreaseQuantity()">
@@ -45,11 +45,14 @@
     Deskripsi Produk
    </h3>
    <p>
-    Jintan hitam 100 gram, atau habbatussauda, adalah biji rempah dengan aroma pedas dan rasa pahit yang kaya manfaat kesehatan.
+    Bunga lawang dengan berat 100 gram ini memiliki aroma khas yang kuat dengan cita rasa manis dan sedikit pedas. 
     <p>
-    <p> 
-    Sering digunakan dalam kari, roti, dan salad, dikemas higienis dan cocok untuk keperluan dapur rumah maupun bisnis kuliner.  
-    </p>
+    <p>
+    Ideal untuk masakan Asia seperti sup, semur, dan olahan daging.
+    <p>
+    <p>
+    Dikemas secara higienis, cocok untuk kebutuhan kuliner skala kecil hingga menengah.
+   </p>
   </div>
   <div class="modal" id="profileModal">
    <div class="modal-content">
@@ -141,10 +144,10 @@
             var newItem = document.createElement('div');
             newItem.className = 'cart-item';
             newItem.innerHTML = `
-                <img alt="jintan hitam" src="images/jintan hitam.jpg"/>
+                <img alt="bunga" src="images/bunga lawang.jpg"/>
                 <div class="item-info">
-                    <h4>Jintan Hitam</h4>
-                    <p>Rp 45.000</p>
+                    <h4>bunga lawang</h4>
+                    <p>Rp 25.000</p>
                 </div>
                 <div class="quantity">
                     <button onclick="decreaseCartQuantity(this)">-</button>

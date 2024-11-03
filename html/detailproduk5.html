@@ -4,7 +4,7 @@
    Detail Produk - RASALOKA
   </title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="detail produk.css">
+  <link rel="stylesheet" href="../css/detailproduk.css">
 
  </head>
  <body>
@@ -15,16 +15,16 @@
    </i>
   </div>
   <div class="product-detail">
-   <img alt="bunga lawang" height="300" src="images/bunga lawang.jpg" width="300"/>
+   <img alt="kayu manis" height="300" src="images/kayu manis (1).jpg" width="300"/>
    <div class="product-info">
     <h2>
-     Bunga Lawang
+     Kayu Manis
     </h2>
     <p class="price">
-     Rp 25.000
+     Rp 30.000
     </p>
     <p class="stock">
-     Stok: 54
+     Stok: 79
     </p>
     <div class="quantity">
      <button onclick="decreaseQuantity()">
@@ -45,14 +45,11 @@
     Deskripsi Produk
    </h3>
    <p>
-    Bunga lawang dengan berat 100 gram ini memiliki aroma khas yang kuat dengan cita rasa manis dan sedikit pedas. 
+    Kayu manis 500 gram dengan aroma manis hangat yang khas, cocok untuk kue, minuman, dan masakan kari.
     <p>
-    <p>
-    Ideal untuk masakan Asia seperti sup, semur, dan olahan daging.
-    <p>
-    <p>
-    Dikemas secara higienis, cocok untuk kebutuhan kuliner skala kecil hingga menengah.
-   </p>
+    <p> 
+    Dikemas higienis untuk menjaga kesegaran, pas untuk keperluan dapur pribadi atau usaha kuliner skala kecil. 
+    </p>
   </div>
   <div class="modal" id="profileModal">
    <div class="modal-content">
@@ -144,10 +141,10 @@
             var newItem = document.createElement('div');
             newItem.className = 'cart-item';
             newItem.innerHTML = `
-                <img alt="bunga" src="images/bunga lawang.jpg"/>
+                <img alt="cengkeh" src="images/kayu manis (1).jpg"/>
                 <div class="item-info">
-                    <h4>bunga lawang</h4>
-                    <p>Rp 25.000</p>
+                    <h4>Kayu Manis</h4>
+                    <p>Rp 30.000</p>
                 </div>
                 <div class="quantity">
                     <button onclick="decreaseCartQuantity(this)">-</button>
