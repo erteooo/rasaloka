@@ -1,4 +1,3 @@
-/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -7,31 +6,45 @@
 
 /* Gaya Umum */
 body {
-    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
     background-image: url('../images/bground.jpg');
-    background-color: #fdfdfd;
-    color: #333;
-    line-height: 1.6;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Header */
 header {
-    background-color: #c79004;
-    padding: 0;
-    text-align: center;
+    background-color: #d09800;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 15px 0;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-header h1 {
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-header p {
-    color: #f0f0f0;
+.header-title {
     font-size: 1.5rem;
+    margin-left: 20px;
 }
 
-nav {
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.navul-navbar {
     font-family: 'Trebuchet MS';
     list-style-type: none;
     color: #ffffff;
@@ -44,18 +57,148 @@ nav {
     margin: 10px 0;
 }
 
-nav a {
-    color: white;
+.navul-navbar li {
+    margin: 0px 15px;
+}
+
+.navul-navbar a {
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+    font-size: 1.2rem;
+    color: #ffffff;
     transition: color 0.5s ease, transform 0.5s ease;
 }
 
-nav a:hover, nav a.active {
+.navul-navbar a:hover {
     color: #d09800;
     transform: scale(1.2);
- }
+}
+
+/* Ikon */
+.header-icons {
+    display: inline-flex;
+    margin-right: 20px;
+    transition: transform 0.5s;
+}
+
+.header-icons a:hover {
+    transform: scale(1.2);
+}
+
+.icon {
+    display: inline-flex;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+.icon img {
+    display: inline-flex;
+    width: 30px;
+    gap: 10px;
+}
+
+/* Popup Login */
+.auth-popup {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 60px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    z-index: 100;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Ketika pop-up ditampilkan */
+.auth-popup.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.auth-button {
+    display: block;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    margin: 10px 0;
+    height: 100%;
+    width: 200px;
+    max-width: 100%;
+    z-index: 200;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+.auth-button:hover {
+    color: #d09800;
+    transform: scale(1);
+}
+
+/* Pop-up Keranjang */
+.cart-popup {
+    background-color: #ffffff;
+    border-left: 5px solid #d09800;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100%;
+    width: 300px;
+    max-width: 100%;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 200;
+    transition: transform 0.5s ease;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+
+.cart-popup.active {
+    transform: translateX(-100%);
+}
+
+.cart-popup .cartbtn {
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.cartbtn .login {
+    display: block;
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+.cartbtn .login:hover {
+    color: #d09800;
+    transform: scale(1.05);
+}
+
+/* Isi Pop-up Keranjang */
+.cart-popup h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cart-popup p {
+    font-size: 1rem;
+    color: #666;
+}
 
 /* Bagian Konten Utama */
 .bantuan-content {
