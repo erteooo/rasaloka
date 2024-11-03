@@ -8,7 +8,7 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-image: url('images/bground.jpg');
+    background-image: url('../images/bground.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,9 +23,9 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Menengahkan secara horizontal */
-    justify-content: center; /* Menengahkan secara vertikal */
-    gap: 20px; /* Jarak antara navbar dan welcome-content */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 /* Header */
@@ -35,10 +35,10 @@ header {
     width: 100%;
     padding: 15px 0;
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    margin: 0;
 }
 
 .header-title {
@@ -47,8 +47,10 @@ header {
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
     width: 100%;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
 }
 
@@ -83,6 +85,7 @@ header {
 
 /* Ikon */
 .header-icons {
+    display: inline-flex;
     margin-right: 20px;
     transition: transform 0.5s;
 }
@@ -92,12 +95,15 @@ header {
 }
 
 .icon {
-    display: inline-block;
+    display: inline-flex;
     margin-left: 15px;
+    gap: 10px;
 }
 
 .icon img {
+    display: inline-flex;
     width: 30px;
+    gap: 10px;
 }
 
 /* Popup Login */
