@@ -5,36 +5,17 @@
   </title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="detail produk.css">
-   
+
  </head>
  <body>
-  <div class="header">
-   <h1>
-    RASALOKA
-   </h1>
-   <div class="icons">
-    <i class="fas fa-user" onclick="document.getElementById('profileModal').style.display='block'">
-    </i>
-    <i class="fas fa-shopping-cart" onclick="document.getElementById('cartModal').style.display='block'">
-    </i>
-   </div>
-  </div>
-  <div class="nav">
-   <a href="#">
-    Beranda
-   </a>
-   <a href="#">
-    Produk
-   </a>
-   <a href="#">
-    Tentang Kami
-   </a>
-   <a href="#">
-    Bantuan
-   </a>
+  <div class="icons">
+   <i class="fas fa-user" onclick="document.getElementById('profileModal').style.display='block'">
+   </i>
+   <i class="fas fa-shopping-cart" onclick="document.getElementById('cartModal').style.display='block'">
+   </i>
   </div>
   <div class="product-detail">
-   <img alt="Produk 1" src="images/jintan hitam.jpg"/>
+   <img alt="jintan hitam" height="300" src="images/jintan hitam.jpg" width="300"/>
    <div class="product-info">
     <h2>
      Jintan Hitam
@@ -49,7 +30,7 @@
      <button onclick="decreaseQuantity()">
       -
      </button>
-     <input id="quantity" readonly type="number" value="1"/>
+     <input id="quantity" readonly="" type="number" value="1"/>
      <button onclick="increaseQuantity()">
       +
      </button>
@@ -73,23 +54,23 @@
   <div class="modal" id="profileModal">
    <div class="modal-content">
     <span class="close" onclick="document.getElementById('profileModal').style.display='none'">
-     &times;
+     ×
     </span>
     <h2>
      Login
     </h2>
     <a class="btn" href="#">
-     Masuk
+     Login with Google
     </a>
     <a class="btn" href="#">
-     Daftar
+     Sign Up with Google
     </a>
    </div>
   </div>
   <div class="modal" id="cartModal">
    <div class="cart-modal-content">
     <span class="close" onclick="document.getElementById('cartModal').style.display='none'">
-     &times;
+     ×
     </span>
     <h2>
      Keranjang Belanja
@@ -101,7 +82,10 @@
     </div>
     <div class="cart-total">
      <h3>
-      Total: Rp <span id="total">0</span>
+      Total: Rp
+      <span id="total">
+       0
+      </span>
      </h3>
      <a class="btn" href="#">
       Buat Pesanan
@@ -181,19 +165,6 @@
             if (event.target == cartModal) {
                 cartModal.style.display = "none";
             }
-        }
-
-        function searchProduct() {
-            var input = document.getElementById('searchInput').value.toLowerCase();
-            var products = document.querySelectorAll('.product');
-            products.forEach(function(product) {
-                var productName = product.getAttribute('data-name').toLowerCase();
-                if (productName.includes(input)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
         }
   </script>
  </body>

@@ -4,271 +4,18 @@
    Detail Produk - RASALOKA
   </title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            background-color: #d4a017;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header h1 {
-            margin: 0;
-            color: black;
-        }
-        .header .icons {
-            font-size: 20px;
-            position: relative;
-        }
-        .header .icons i {
-            margin-left: 15px;
-            color: black;
-            cursor: pointer;
-        }
-        .nav {
-            background-color: black;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-        .product-detail {
-            display: flex;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .product-detail img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            margin-right: 20px;
-        }
-        .product-info {
-            max-width: 600px;
-        }
-        .product-info h2 {
-            margin: 0;
-            font-size: 24px;
-            color: black;
-        }
-        .product-info p {
-            font-size: 18px;
-            color: #555;
-        }
-        .product-info .price {
-            font-size: 20px;
-            color: #d4a017;
-            margin: 10px 0;
-        }
-        .product-info .stock {
-            font-size: 16px;
-            color: green;
-            margin: 10px 0;
-        }
-        .product-info .quantity {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
-        .product-info .quantity button {
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .product-info .quantity input {
-            width: 50px;
-            text-align: center;
-            border: 1px solid #ddd;
-            margin: 0 5px;
-            appearance: textfield;
-        }
-        .product-info .quantity input::-webkit-outer-spin-button,
-        .product-info .quantity input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        .product-info .btn {
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .product-description {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .product-description h3 {
-            margin-top: 0;
-            font-size: 20px;
-            color: black;
-        }
-        .product-description p {
-            font-size: 16px;
-            color: #555;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-        }
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-            position: relative;
-        }
-        .modal-content h2 {
-            margin-top: 0;
-        }
-        .modal-content .btn {
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: block;
-            margin-top: 10px;
-            text-align: center;
-        }
-        .cart-modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 700px;
-            border-radius: 10px;
-            position: relative;
-        }
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .cart-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-        }
-        .cart-item .item-info {
-            flex-grow: 1;
-            margin-left: 10px;
-        }
-        .cart-item .item-info h4 {
-            margin: 0;
-            font-size: 16px;
-        }
-        .cart-item .item-info p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #555;
-        }
-        .cart-item .quantity {
-            display: flex;
-            align-items: center;
-        }
-        .cart-item .quantity button {
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .cart-item .quantity input {
-            width: 40px;
-            text-align: center;
-            border: 1px solid #ddd;
-            margin: 0 5px;
-            appearance: textfield;
-        }
-        .cart-item .quantity input::-webkit-outer-spin-button,
-        .cart-item .quantity input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        .cart-total {
-            text-align: right;
-            margin-top: 20px;
-            border-top: 1px solid #ddd;
-            padding-top: 10px;
-        }
-        .cart-total h3 {
-            margin: 0;
-        }
-        .cart-total .btn {
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            color: black;
-        }
-  </style>
+  <link rel="stylesheet" href="detail produk.css">
+
  </head>
  <body>
-  <div class="header">
-   <h1>
-    RASALOKA
-   </h1>
-   <div class="icons">
-    <i class="fas fa-user" onclick="document.getElementById('profileModal').style.display='block'">
-    </i>
-    <i class="fas fa-shopping-cart" onclick="document.getElementById('cartModal').style.display='block'">
-    </i>
-   </div>
-  </div>
-  <div class="nav">
-   <a href="#">
-    Beranda
-   </a>
-   <a href="#">
-    Produk
-   </a>
-   <a href="#">
-    Tentang Kami
-   </a>
-   <a href="#">
-    Bantuan
-   </a>
+  <div class="icons">
+   <i class="fas fa-user" onclick="document.getElementById('profileModal').style.display='block'">
+   </i>
+   <i class="fas fa-shopping-cart" onclick="document.getElementById('cartModal').style.display='block'">
+   </i>
   </div>
   <div class="product-detail">
-   <img alt="Produk 1" src="andaliman.jpg"/>
+   <img alt="Andaliman" height="300" src="images/andaliman.jpg" width="300"/>
    <div class="product-info">
     <h2>
      Andaliman
@@ -283,7 +30,7 @@
      <button onclick="decreaseQuantity()">
       -
      </button>
-     <input id="quantity" readonly type="number" value="1"/>
+     <input id="quantity" readonly="" type="number" value="1"/>
      <button onclick="increaseQuantity()">
       +
      </button>
@@ -298,14 +45,16 @@
     Deskripsi Produk
    </h3>
    <p>
-    Andaliman 1Kg rempah khas dengan cita rasa pedas segar yang unik deal untuk masakan Batak seperti arsik dan saksang, serta hidangan Nusantara lainnya
+    Andaliman 1Kg rempah khas dengan cita rasa pedas segar yang unik ideal untuk masakan Batak seperti arsik dan saksang, serta hidangan Nusantara lainnya. 
+    <p>
+    <p>
     Dikemas higienis, cocok untuk kebutuhan kuliner skala besar seperti restoran dan katering.
    </p>
   </div>
   <div class="modal" id="profileModal">
    <div class="modal-content">
     <span class="close" onclick="document.getElementById('profileModal').style.display='none'">
-     &times;
+     ×
     </span>
     <h2>
      Login
@@ -321,7 +70,7 @@
   <div class="modal" id="cartModal">
    <div class="cart-modal-content">
     <span class="close" onclick="document.getElementById('cartModal').style.display='none'">
-     &times;
+     ×
     </span>
     <h2>
      Keranjang Belanja
@@ -333,7 +82,10 @@
     </div>
     <div class="cart-total">
      <h3>
-      Total: Rp <span id="total">0</span>
+      Total: Rp
+      <span id="total">
+       0
+      </span>
      </h3>
      <a class="btn" href="#">
       Buat Pesanan
@@ -389,9 +141,9 @@
             var newItem = document.createElement('div');
             newItem.className = 'cart-item';
             newItem.innerHTML = `
-                <img alt="Andaliman" src="andaliman.jpg"/>
+                <img alt="Andaliman" src="images/andaliman.jpg"/>
                 <div class="item-info">
-                    <h4>Produk 1</h4>
+                    <h4>Andaliman</h4>
                     <p>Rp 100.000</p>
                 </div>
                 <div class="quantity">
@@ -413,19 +165,6 @@
             if (event.target == cartModal) {
                 cartModal.style.display = "none";
             }
-        }
-
-        function searchProduct() {
-            var input = document.getElementById('searchInput').value.toLowerCase();
-            var products = document.querySelectorAll('.product');
-            products.forEach(function(product) {
-                var productName = product.getAttribute('data-name').toLowerCase();
-                if (productName.includes(input)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
         }
   </script>
  </body>

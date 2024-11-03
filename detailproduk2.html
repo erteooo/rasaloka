@@ -5,36 +5,17 @@
   </title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="detail produk.css">
-   
+
  </head>
  <body>
-  <div class="header">
-   <h1>
-    RASALOKA
-   </h1>
-   <div class="icons">
-    <i class="fas fa-user" onclick="document.getElementById('profileModal').style.display='block'">
-    </i>
-    <i class="fas fa-shopping-cart" onclick="document.getElementById('cartModal').style.display='block'">
-    </i>
-   </div>
-  </div>
-  <div class="nav">
-   <a href="#">
-    Beranda
-   </a>
-   <a href="coba2.html">
-    Produk
-   </a>
-   <a href="#">
-    Tentang Kami
-   </a>
-   <a href="#">
-    Bantuan
-   </a>
+  <div class="icons">
+   <i class="fas fa-user" onclick="document.getElementById('profileModal').style.display='block'">
+   </i>
+   <i class="fas fa-shopping-cart" onclick="document.getElementById('cartModal').style.display='block'">
+   </i>
   </div>
   <div class="product-detail">
-   <img alt="Produk 1" src="images/bunga lawang.jpg"/>
+   <img alt="bunga lawang" height="300" src="images/bunga lawang.jpg" width="300"/>
    <div class="product-info">
     <h2>
      Bunga Lawang
@@ -43,13 +24,13 @@
      Rp 25.000
     </p>
     <p class="stock">
-     Stok: 20
+     Stok: 54
     </p>
     <div class="quantity">
      <button onclick="decreaseQuantity()">
       -
      </button>
-     <input id="quantity" readonly type="number" value="1"/>
+     <input id="quantity" readonly="" type="number" value="1"/>
      <button onclick="increaseQuantity()">
       +
      </button>
@@ -66,8 +47,8 @@
    <p>
     Bunga lawang dengan berat 100 gram ini memiliki aroma khas yang kuat dengan cita rasa manis dan sedikit pedas. 
     <p>
-    <p>   
-    Ideal untuk masakan Asia seperti sup, semur, dan olahan daging. 
+    <p>
+    Ideal untuk masakan Asia seperti sup, semur, dan olahan daging.
     <p>
     <p>
     Dikemas secara higienis, cocok untuk kebutuhan kuliner skala kecil hingga menengah.
@@ -76,7 +57,7 @@
   <div class="modal" id="profileModal">
    <div class="modal-content">
     <span class="close" onclick="document.getElementById('profileModal').style.display='none'">
-     &times;
+     ×
     </span>
     <h2>
      Login
@@ -92,7 +73,7 @@
   <div class="modal" id="cartModal">
    <div class="cart-modal-content">
     <span class="close" onclick="document.getElementById('cartModal').style.display='none'">
-     &times;
+     ×
     </span>
     <h2>
      Keranjang Belanja
@@ -104,7 +85,10 @@
     </div>
     <div class="cart-total">
      <h3>
-      Total: Rp <span id="total">0</span>
+      Total: Rp
+      <span id="total">
+       0
+      </span>
      </h3>
      <a class="btn" href="#">
       Buat Pesanan
@@ -160,9 +144,9 @@
             var newItem = document.createElement('div');
             newItem.className = 'cart-item';
             newItem.innerHTML = `
-                <img alt="bunga lawang" src="images/bunga lawang.jpg"/>
+                <img alt="bunga" src="images/bunga lawang.jpg"/>
                 <div class="item-info">
-                    <h4>Bunga Lawang</h4>
+                    <h4>bunga lawang</h4>
                     <p>Rp 25.000</p>
                 </div>
                 <div class="quantity">
@@ -184,19 +168,6 @@
             if (event.target == cartModal) {
                 cartModal.style.display = "none";
             }
-        }
-
-        function searchProduct() {
-            var input = document.getElementById('searchInput').value.toLowerCase();
-            var products = document.querySelectorAll('.product');
-            products.forEach(function(product) {
-                var productName = product.getAttribute('data-name').toLowerCase();
-                if (productName.includes(input)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
         }
   </script>
  </body>
