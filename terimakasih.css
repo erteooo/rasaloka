@@ -1,0 +1,109 @@
+body {
+    background-color: #f7fafc;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.subtitle {
+    text-align: center;
+    color: #718096;
+    margin-top: 0.5rem;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    background-color: #edf2f7;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+.order-item img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+}
+
+.item-info {
+    margin-left: 1rem;
+}
+
+.item-info h4 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.item-info p {
+    color: #718096;
+    margin: 0.25rem 0;
+}
+
+.rating, .comment {
+    margin-top: 1.5rem;
+}
+
+.rating h3, .comment h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.stars i {
+    color: #cbd5e0;
+    cursor: pointer;
+    margin-right: 0.25rem;
+}
+
+.comment textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.comment button {
+    background-color: #000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #38a169;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
