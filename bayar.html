@@ -1,0 +1,191 @@
+<html>
+ <head>
+  <title>
+   Buat Pesanan - RASALOKA
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="bayar.css">
+
+ </head>
+ <body>
+  <div class="order-container">
+   <div class="order-item">
+    <img alt="Andaliman" height="100" src="images/andaliman.jpg" width="100"/>
+    <div class="item-info">
+     <h4>
+      Andaliman
+     </h4>
+     <p>
+      Rp 100.000
+     </p>
+     <p>
+      Jumlah: 2
+     </p>
+    </div>
+   </div>
+   <div class="order-summary">
+    <h3>
+     Alamat Pengiriman
+    </h3>
+    <p>
+     Solo, Indonesia
+    </p>
+    <div class="form-group">
+     <label for="shipping">
+      Opsi Pengiriman
+     </label>
+     <select id="shipping" onchange="updateOrderTotal()">
+      <option value="10000">
+       Standard - Rp 10.000
+      </option>
+      <option value="20000">
+       Express - Rp 20.000
+      </option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label for="payment">
+      Opsi Pembayaran
+     </label>
+     <select id="payment">
+      <option value="credit_card">
+       Kartu Kredit
+      </option>
+      <option value="bank_transfer">
+       Transfer Bank
+      </option>
+      <option value="cod">
+       Cash on Delivery (COD)
+      </option>
+     </select>
+    </div>
+    <div class="total">
+     Total Belanja: Rp
+     <span id="orderTotal">
+      210.000
+     </span>
+    </div>
+    <button class="btn" onclick="placeOrder()">
+     Bayar
+    </button>
+   </div>
+  </div>
+  <div class="modal" id="profileModal">
+   <div class="modal-content">
+    <span class="close" onclick="document.getElementById('profileModal').style.display='none'">
+     ×
+    </span>
+    <h2>
+     Login
+    </h2>
+    <a class="btn" href="#">
+     Login with Google
+    </a>
+    <a class="btn" href="#">
+     Sign Up with Google
+    </a>
+   </div>
+  </div>
+  <div class="modal" id="cartModal">
+   <div class="cart-modal-content">
+    <span class="close" onclick="document.getElementById('cartModal').style.display='none'">
+     ×
+    </span>
+    <h2>
+     Keranjang Belanja
+    </h2>
+    <div id="cartItems">
+     <div class="cart-item">
+      <img alt="A close-up of Andaliman, a unique spice with small, round, greenish-brown berries used in Batak cuisine" height="50" src="https://storage.googleapis.com/a1aa/image/7vmtKfnxAemYHkiyh7eAYoc4iqoKdjsF8FvguqcbueLpH10OB.jpg" width="50"/>
+      <div class="item-info">
+       <h4>
+        Andaliman
+       </h4>
+       <p>
+        Rp 100.000
+       </p>
+      </div>
+      <div class="quantity">
+       <button onclick="decreaseCartQuantity(this)">
+        -
+       </button>
+       <input readonly="" type="number" value="2"/>
+       <button onclick="increaseCartQuantity(this)">
+        +
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="cart-total">
+     <h3>
+      Total: Rp
+      <span id="total">
+       200.000
+      </span>
+     </h3>
+     <a class="btn" href="order.html">
+      Buat Pesanan
+     </a>
+    </div>
+   </div>
+  </div>
+  <script>
+   function increaseCartQuantity(button) {
+            var input = button.previousElementSibling;
+            input.value = parseInt(input.value) + 1;
+            updateTotal();
+        }
+
+        function decreaseCartQuantity(button) {
+            var input = button.nextElementSibling;
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+                updateTotal();
+            }
+        }
+
+        function updateTotal() {
+            var total = 0;
+            var cartItems = document.querySelectorAll('.cart-item');
+            cartItems.forEach(function(item) {
+                var price = parseInt(item.querySelector('.item-info p').innerText.replace('Rp ', '').replace('.', ''));
+                var quantity = parseInt(item.querySelector('.quantity input').value);
+                total += price * quantity;
+            });
+            document.getElementById('total').innerText = total.toLocaleString('id-ID');
+            updateOrderTotal();
+        }
+
+        function updateOrderTotal() {
+            var shippingCost = parseInt(document.getElementById('shipping').value);
+            var productTotal = parseInt(document.getElementById('total').innerText.replace('.', ''));
+            var orderTotal = productTotal + shippingCost;
+            document.getElementById('orderTotal').innerText = orderTotal.toLocaleString('id-ID');
+        }
+
+        window.onclick = function(event) {
+            var profileModal = document.getElementById('profileModal');
+            var cartModal = document.getElementById('cartModal');
+            if (event.target == profileModal) {
+                profileModal.style.display = "none";
+            }
+            if (event.target == cartModal) {
+                cartModal.style.display = "none";
+            }
+        }
+
+        function placeOrder() {
+            alert('Pesanan Anda telah berhasil dibuat!');
+            // Clear the cart
+            document.getElementById('cartItems').innerHTML = '<p id="emptyCartMessage">Keranjang masih kosong.</p>';
+            document.getElementById('total').innerText = '0';
+            updateOrderTotal();
+        }
+
+        // Initialize order total on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateOrderTotal();
+        });
+  </script>
+ </body>
+</html>
