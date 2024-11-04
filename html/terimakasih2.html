@@ -1,0 +1,102 @@
+<html>
+ <head>
+  <title>
+   Terima Kasih - RASALOKA
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/terimakasih.css" >
+
+ </head>
+ <body>
+  <div class="container">
+   <h1 class="title">
+    Terima Kasih!
+   </h1>
+   <p class="subtitle">
+    Pesananmu sedang diproses.
+   </p>
+   <div class="order-item">
+    <img alt="Andaliman" src="../images/bunga lawang.jpg"/>
+    <div class="item-info">
+     <h4>
+      Bunga lawang
+     </h4>
+     <p>
+      Harga: Rp 25.000
+     </p>
+     <p>
+      Jumlah: 1
+     </p>
+    </div>
+   </div>
+   <div class="rating">
+    <h3>
+     Beri Penilaian
+    </h3>
+    <div class="stars">
+     <i class="fas fa-star" onclick="rateProduct(1)">
+     </i>
+     <i class="fas fa-star" onclick="rateProduct(2)">
+     </i>
+     <i class="fas fa-star" onclick="rateProduct(3)">
+     </i>
+     <i class="fas fa-star" onclick="rateProduct(4)">
+     </i>
+     <i class="fas fa-star" onclick="rateProduct(5)">
+     </i>
+    </div>
+   </div>
+   <div class="comment">
+    <h3>
+     Beri Komentar
+    </h3>
+    <textarea id="comment" placeholder="Tulis komentar Anda di sini...">
+    </textarea>
+    <button onclick="submitFeedback()">
+     Kirim
+    </button>
+   </div>
+  </div>
+  <div class="notification" id="notification">
+   Komentar Anda telah terkirim!
+  </div>
+  <script>
+   let selectedRating = 0;
+
+        function rateProduct(stars) {
+            selectedRating = stars;
+            const starElements = document.querySelectorAll('.fa-star');
+            starElements.forEach((star, index) => {
+                if (index < stars) {
+                    star.style.color = '#f6ad55'; // yellow-500
+                } else {
+                    star.style.color = '#cbd5e0'; // gray-400
+                }
+            });
+        }
+
+        function submitFeedback() {
+            const comment = document.getElementById('comment').value.trim();
+            if (selectedRating === 0) {
+                alert('Silakan beri penilaian.');
+                return;
+            }
+            if (comment === '') {
+                alert('Silakan tulis komentar Anda.');
+                return;
+            }
+
+            // Show notification
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+
+            // Clear the comment and reset stars
+            document.getElementById('comment').value = '';
+            rateProduct(0);
+        }
+  </script>
+ </body>
+</html>
