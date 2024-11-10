@@ -40,8 +40,6 @@
                 d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
               />
             </svg>
-            <!-- Pop-up Login -->
-
           </div>
           <div class="icon">
             <svg
@@ -115,52 +113,16 @@
         <div class="modal-content">
             <span class="close" onclick="document.getElementById('profileModal').style.display='none'">×</span>
             <h2>Login</h2>
-            <a class="btn" href="#">Login with Google</a>
-            <a class="btn" href="#">Sign Up with Google</a>
+            <a class="btn" href="#">Login</a>
+            <a class="btn" href="#">Sign Up</a>
         </div>
     </div>
     <div class="modal" id="cartModal">
         <div class="cart-modal-content">
             <span class="close" onclick="document.getElementById('cartModal').style.display='none'">×</span>
             <h2>Keranjang Belanja</h2>
-            <div class="cart-item">
-                <img alt="Produk 1" height="50" src="../images/andaliman.jpg" width="50 "/>
-                <div class="item-info">
-                    <h4>Andaliman</h4>
-                    <p>Rp 100.000</p>
-                </div>
-                <div class="quantity">
-                    <button onclick="decreaseQuantity(this)">-</button>
-                    <input onchange="updateTotal()" readonly="" type="number" value="1"/>
-                    <button onclick="increaseQuantity(this)">+</button>
-                </div>
-            </div>
-            <div class="cart-item">
-                <img alt="Produk 2" height="50" src="../images/bunga lawang.jpg" width="50"/>
-                <div class="item-info">
-                    <h4>Bunga Lawang</h4>
-                    <p>Rp 25.000</p>
-                </div>
-                <div class="quantity">
-                    <button onclick="decreaseQuantity(this)">-</button>
-                    <input onchange="updateTotal()" readonly="" type="number" value="1"/>
-                    <button onclick="increaseQuantity(this)">+</button>
-                </div>
-            </div>
-            <div class="cart-item">
-                <img alt="Produk 3" height="50" src="../images/jintan hitam.jpg" width="50"/>
-                <div class="item-info">
-                    <h4>Jintan Hitam</h4>
-                    <p>Rp 45.000</p>
-                </div>
-                <div class="quantity">
-                    <button onclick="decreaseQuantity(this)">-</button>
-                    <input onchange="updateTotal()" readonly="" type="number" value="1"/>
-                    <button onclick="increaseQuantity(this)">+</button>
-                </div>
-            </div>
             <div class="cart-total">
-                <h3>Total: Rp <span id="total">170.000</span></h3>
+                <h3>Total: Rp <span id="total">0</span></h3>
                 <a class="btn" href="#">Buat Pesanan</a>
             </div>
         </div>
