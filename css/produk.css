@@ -1,0 +1,357 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('../images/bground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #d09800;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 15px 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.navul-navbar {
+    font-family: 'Trebuchet MS';
+    list-style-type: none;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.navul-navbar li {
+    margin: 0px 15px;
+}
+
+.navul-navbar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ffffff;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.navul-navbar a:hover {
+    color: #d09800;
+    transform: scale(1.2);
+}
+
+/* Ikon */
+.header-icons {
+    display: inline-flex;
+    margin-right: 20px;
+    transition: transform 0.5s;
+}
+
+.header-icons a:hover {
+    transform: scale(1.2);
+}
+
+.icon {
+    display: inline-flex;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+.icon img {
+    display: inline-flex;
+    width: 30px;
+    gap: 10px;
+}
+
+/* Pop-up Keranjang */
+.cart-popup {
+    background-color: #ffffff;
+    border-left: 5px solid #d09800;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100%;
+    width: 300px;
+    max-width: 100%;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 200;
+    transition: transform 0.5s ease;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+
+.cart-popup.active {
+    transform: translateX(-100%);
+}
+
+.cart-popup .cartbtn {
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.cartbtn .login {
+    display: block;
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+.cartbtn .login:hover {
+    color: #d09800;
+    transform: scale(1.05);
+}
+
+/* Isi Pop-up Keranjang */
+.cart-popup h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cart-popup p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+.search-bar {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline : none;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #d4a017;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.product-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 10px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: black;
+}
+
+.product p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.product .btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.product .btn:hover {
+    color: #d09800;
+    transform: scale(1.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content .btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cart-modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.cart-item .item-info {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.cart-item .item-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.cart-item .item-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.cart-item .quantity {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item .quantity button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart-item .quantity input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.cart-total h3 {
+    margin: 0;
+}
+
+.cart-total .btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}

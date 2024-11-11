@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RasaLoka - Tentang Kami</title>
+    <link rel="stylesheet" href="../css/tentang-kami.css">
+</head>
+<body>
+    <!-- Header Utama -->
+    <header>
+        <h1 class="header-title">RASALOKA</h1>
+        <div class="header-icons">
+            <div class="icon">
+                <a href="login.html">
+                    <svg class="rasaloka-profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-label="Profile Icon">
+                        <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="keranjang.html">
+                    <svg class="rasaloka-cart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-label="Cart Icon">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="navul-navbar">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="tentang kami.html">Tentang Kami</a></li>
+            <li><a href="bantuan.html">Bantuan</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content - Tentang Kami -->
+    <main>
+        <section class="about-section">
+            <h2>Tentang RasaLoka</h2>
+            <p>RasaLoka adalah platform yang menyediakan rempah-rempah berkualitas terbaik dari seluruh Nusantara. Kami berkomitmen untuk mendukung petani lokal dan memudahkan akses rempah terbaik bagi masyarakat luas.</p>
+            <p>Kami percaya bahwa rempah-rempah bukan hanya bahan masakan, tetapi juga warisan budaya yang kaya. Mari bersama-sama menjelajahi cita rasa Indonesia yang autentik.</p>
+        </section>
+
+        <!-- Form Kontak -->
+        <section class="contact-form-section">
+            <h3>Hubungi Kami</h3>
+            <form action="kirim-pesan.html" method="post" class="contact-form">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email Anda" required>
+
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan Anda di sini" required></textarea>
+
+                <button type="submit" class="cta-button">Kirim Pesan</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-toggle">
+            <p>Jika kamu adalah penjual,</p>
+            <a href="bantuan.html" class="link-hover">klik disini</a>
+        </div>
+    </footer>
+</body>
+</html>
