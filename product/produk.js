@@ -1,41 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Variabel untuk ikon keranjang dan pop-up
     const cartIcon = document.querySelector(".rasaloka-cart");
     const cartPopup = document.getElementById("cart-popup");
     const cartItemsContainer = document.getElementById("cartItemsContainer");
-    let isMouseInCartOrPopup = false;
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.querySelector(".search-bar button");
+    const products = document.querySelectorAll(".product");
 
-    let cart = []; // Array untuk menyimpan item keranjang
+    let cart = []; // Array untuk menyimpan data keranjang
 
-    // Menampilkan pop-up keranjang
+    // Fungsi menampilkan pop-up keranjang
     const showCartPopup = () => {
         cartPopup.classList.add("active");
     };
 
-    // Menyembunyikan pop-up keranjang
+    // Fungsi menyembunyikan pop-up keranjang
     const hideCartPopup = () => {
         cartPopup.classList.remove("active");
     };
 
-    // Event mouse pada ikon keranjang
+    // Event hover untuk pop-up keranjang
     cartIcon.addEventListener("mouseenter", showCartPopup);
-    cartIcon.addEventListener("mouseleave", function () {
-        setTimeout(() => {
-            if (!isMouseInCartOrPopup) {
-                hideCartPopup();
-            }
-        }, 200);
-    });
+    cartIcon.addEventListener("mouseleave", hideCartPopup);
 
-    // Event mouse pada pop-up keranjang
-    cartPopup.addEventListener("mouseenter", () => (isMouseInCartOrPopup = true));
-    cartPopup.addEventListener("mouseleave", () => {
-        isMouseInCartOrPopup = false;
-        hideCartPopup();
-    });
-
-    // Fungsi menambah item ke keranjang
-    function addToCart(productName, productPrice, productImage) {
+    // Fungsi menambah produk ke keranjang
+    function addToCart(productImage, productName, productPrice) {
         const existingProductIndex = cart.findIndex(
             (item) => item.name === productName
         );
@@ -44,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
             cart[existingProductIndex].quantity++;
         } else {
             cart.push({
+                image: productImage,
                 name: productName,
                 price: productPrice,
                 quantity: 1,
-                image: productImage,
             });
         }
 
@@ -64,15 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             cart.forEach((item, index) => {
                 total += item.price * item.quantity;
-
                 cartItemsContainer.innerHTML += `
                 <div class="cart-item">
                     <img src="${item.image}" alt="${item.name}" width="50" height="50" />
                     <div class="item-info">
                         <h4>${item.name}</h4>
                         <p>Rp ${item.price.toLocaleString("id-ID")}</p>
+                        <p>Jumlah: ${item.quantity}</p>
                     </div>
-                    <div class="quantity">
+                    <div class="quantity-controls">
                         <button onclick="decreaseQuantity(${index})">-</button>
                         <input type="number" value="${item.quantity}" readonly />
                         <button onclick="increaseQuantity(${index})">+</button>
@@ -82,8 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             cartItemsContainer.innerHTML += `
             <div class="cart-total">
-                <h3>Total: Rp <span id="total">${total.toLocaleString("id-ID")}</span></h3>
-                <a class="btn" href="#">Buat Pesanan</a>
+                <h3>Total: Rp <span id="total">${total.toLocaleString(
+                    "id-ID"
+                )}</span></h3>
+                <a class="btn" href="#" onclick="checkout()">Buat Pesanan</a>
             </div>`;
         }
     }
@@ -104,27 +94,29 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCart();
     };
 
-    // Fungsi pencarian produk
-    document.getElementById("searchInput").addEventListener("input", function () {
-        const input = this.value.toLowerCase();
-        const products = document.querySelectorAll(".product");
-        products.forEach((product) => {
-            const productName = product.getAttribute("data-name").toLowerCase();
-            if (productName.includes(input)) {
-                product.style.display = "block";
-            } else {
-                product.style.display = "none";
+        // Fungsi pencarian produk
+        function searchProduct() {
+            const input = searchInput.value.toLowerCase();
+            products.forEach((product) => {
+                const productName = product.getAttribute("data-name").toLowerCase();
+                if (productName.includes(input)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    
+        // Event untuk tombol *Cari*
+        searchButton.addEventListener("click", function () {
+            searchProduct();
+        });
+    
+        // Event untuk tombol *Enter* di input pencarian
+        searchInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Mencegah refresh halaman
+                searchProduct();
             }
         });
     });
-
-    // Debug untuk testing klik produk
-    document.querySelectorAll(".product").forEach((product) => {
-        product.addEventListener("click", function () {
-            const name = this.getAttribute("data-name");
-            const price = parseInt(this.getAttribute("data-price"));
-            const image = this.querySelector("img").src;
-            addToCart(name, price, image);
-        });
-    });
-});

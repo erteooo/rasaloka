@@ -39,7 +39,6 @@ header {
     align-items: center;
     justify-content: space-between;
     margin: 0;
-    text-decoration: none;
 }
 
 .header-title {
@@ -88,21 +87,22 @@ header {
 
 /* Ikon */
 .header-icons {
-    color: #000;
     display: inline-flex;
     margin-right: 20px;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-in;
+}
+
+.header-icons a:hover {
+    transform: scale(1.2);
 }
 
 .icon {
-    color: #000000;
     display: inline-flex;
     margin-left: 15px;
     gap: 10px;
 }
 
 .icon img {
-    color: #000000;
     display: inline-flex;
     width: 30px;
     gap: 10px;
@@ -133,6 +133,7 @@ header {
 .cart-popup .cartbtn {
     display: inline-block;
     text-align: center;
+    transition: background-color 0.5s, transform 0.5s;
 }
 
 .cartbtn .login {
@@ -166,11 +167,12 @@ header {
 
 /* Search Bar */
 .search-bar {
-    padding: 20px;
-    text-align: center;
     display: flex;
+    width: 100%;
+    height: auto;
     justify-content: center;
-    align-items: center;
+    margin: 20px;
+    padding: 10px;
 }
 
 .search-bar input {
@@ -191,7 +193,7 @@ header {
 
 /* Produk Container */
 .product-container {
-    display: grid;
+    display: inline-flex;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     margin: 20px;
@@ -221,7 +223,7 @@ header {
 }
 .product img:hover {
     opacity: 1;
-    transform: scale(0.9);
+    transform: scale(0.97);
 }
 
 .product h3 {
@@ -245,12 +247,12 @@ header {
     border-radius: 5px;
     display: inline-block;
     margin-top: 10px;
-    transition: color 0.5s ease, transform 0.5s ease;
+    transition: color 0.5s ease-in, transform 0.5s ease-in;
 }
 
 .product .add-to-cart-btn:hover {
     color: #d09800;
-    transform: scale(1.2);
+    transform: scale(0.97);
 }
 
 /* Footer */
