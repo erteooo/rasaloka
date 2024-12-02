@@ -88,6 +88,7 @@ header {
 
 /* Ikon */
 .header-icons {
+    color: #000000;
     display: inline-flex;
     margin-right: 20px;
     transition: transform 0.5s ease-in;
@@ -98,6 +99,7 @@ header {
 }
 
 .icon {
+    color: #000000;
     display: inline-flex;
     margin-left: 15px;
     gap: 10px;
