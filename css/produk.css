@@ -1,0 +1,331 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('../images/bground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main Section */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Header */
+header {
+    background-color: #d09800;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 15px 0;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.navul-navbar {
+    font-family: 'Trebuchet MS';
+    list-style-type: none;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.navul-navbar li {
+    margin: 0px 15px;
+}
+
+.navul-navbar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ffffff;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.navul-navbar a:hover {
+    color: #d09800;
+    transform: scale(1.2);
+}
+
+/* Ikon */
+.header-icons {
+    display: inline-flex;
+    margin-right: 20px;
+    transition: transform 0.5s ease-in;
+}
+
+.header-icons a:hover {
+    transform: scale(1.2);
+}
+
+.icon {
+    display: inline-flex;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+.icon img {
+    display: inline-flex;
+    width: 30px;
+    gap: 10px;
+}
+
+/* Pop-up Keranjang */
+.cart-popup {
+    background-color: #ffffff;
+    border-left: 5px solid #d09800;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100%;
+    width: 300px;
+    max-width: 100%;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 200;
+    transition: transform 0.5s ease;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+
+.cart-popup.active {
+    transform: translateX(-100%);
+}
+
+.cart-popup .cartbtn {
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.cartbtn .login {
+    display: block;
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+.cartbtn .login:hover {
+    color: #d09800;
+    transform: scale(1.05);
+}
+
+/* Isi Pop-up Keranjang */
+.cart-popup h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cart-popup p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+.search-bar input {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #d09800;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Produk Container */
+.product-container {
+    display: inline-flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    opacity: 0; /* Default untuk animasi fade-in */
+    background-image: linear-gradient(
+        to bottom, #000000 2%, transparent
+    );
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.product-link {
+    text-decoration: none;
+}
+
+.product img {
+    opacity: 0.8;
+    width: 100%;
+    margin-top: 0 auto;
+    height: auto;
+    border-radius: 10px;
+    filter: blur(1px);
+    filter: grayscale(20%);
+    transition: opacity 0.5s ease-in-out;
+}
+.product img:hover {
+    filter: none;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    opacity: 1;
+}
+
+.product h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: black;
+    transition: transform 0.5s ease;
+}
+
+.product p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.product .add-to-cart-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s ease-in;
+}
+
+.product .add-to-cart-btn:hover {
+    color: #d09800;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #d09800;
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+    gap: 5px;
+}
+
+.footer-toogle {
+    display: inline-flex;
+    background-color: #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-bottom: 0;
+    gap: 8px;
+}
+
+/* Link dengan efek hover */
+.link-hover {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    transition: color 0.5s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.link-hover:hover {
+    color: #d09800;
+    transform: scale(1.1);
+}
+
+/* Animasi Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 320px) {
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+}

@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "name":" Andaliman",
+        "price": 10,
+        "image": "images/andaliman.jpg"
+    },
+    {
+        "id": 2,
+        "name":" Bunga Lawang",
+        "price": 1.5,
+        "image": "images/bunga lawang.jpg"
+    },
+    {
+        "id": 3,
+        "name":" Jintan Hitam",
+        "price": 3,
+        "image": "images/jintan hitam.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Cengkeh",
+        "price": 4,
+        "image": "images/cengkeh.jpg"
+    },
+    {
+        "id": 5,
+        "name":" Kayu Manis",
+        "price": 2.5,
+        "image": "images/kayu manis.jpg"
+    },

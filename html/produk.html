@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - RASALOKA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/produk.css">
+</head>
+<body>
+    <!-- Header Utama -->
+    <header>
+        <h1><a href="index.html" class="header-title">RASALOKA</a></h1>
+  
+        <!-- Navbar -->
+        <nav class="navbar">
+          <ul class="navul-navbar">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="tentangkami.html">Tentang Kami</a></li>
+            <li><a href="bantuan.html">Bantuan</a></li>
+          </ul>
+        </nav>
+  
+        <!-- Ikon -->
+        <div class="header-icons">
+          <div class="icon">
+            <a href="form.html">
+                <svg class="rasaloka-profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                </svg>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="keranjang.html">
+                <svg class="rasaloka-cart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+            </a>
+            <!-- Pop-up Keranjang -->
+            <div id="cart-popup" class="cart-popup">
+              <h3>Keranjang Kamu</h3>
+              <div id="cartItemsContainer" class="cart-items"></div>
+              <p id="cartEmptyMessage">Keranjang kosong</p>
+              <div class="cartbtn">
+                  <a href="form.html" class="login">Login</a>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Pop-up Keranjang -->
+        </div>
+    </header>
+  
+<main>
+    <!-- Main Section -->
+    <div class="search-bar">
+        <input id="searchInput" placeholder="Cari produk..." type="text" aria-label="Cari produk" />
+        <button>
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+
+    <div class="product-container" id="productContainer">
+        <!-- Produk 1 -->
+        <div class="product" data-name="andaliman, Andaliman, a, an, and, anda, andal, andali, andalim, andalima" data-price="100000">
+            <a class="product-link" href="detailproduk1.html">
+                <img alt="Produk Andaliman, rempah khas Indonesia" src="../images/andaliman.jpg" />
+                <h3>Andaliman</h3>
+            </a>
+            <p>Rp 100.000</p>
+            <button class="add-to-cart-btn" onclick="addToCart('../images/andaliman.jpg', 'Andaliman', 100000)">Tambahkan ke Keranjang</button>
+        </div>
+        <div class="product" data-name="bunga lawang, b, bu, bun, bung, bunga, law, lawa, lawan, lawang" data-price="25000">
+            <a class="product-link" href="detailproduk2.html">
+                <img alt="Produk Bunga Lawang" height="450" src="../images/bunga lawang.jpg" width="450" />
+                <h3>Bunga Lawang</h3>
+            </a>
+            <p>Rp 25.000</p>
+            <button class="add-to-cart-btn" onclick="addToCart('../images/bunga lawang.jpg', 'Bunga Lawang', 25000)">Tambahkan ke Keranjang</button>
+        </div>
+        <div class="product" data-name="jintan hitam, j, ji, jit, jint, jinta, jintan, jintan h, jintan hi, jintan hit, jintan hita, jintan hitam" data-price="45000">
+            <a class="product-link" href="detailproduk3.html">
+                <img alt="Produk Jintan Hitam" height="450" src="../images/jintan hitam.jpg" width="450"/>
+                <h3>Jintan Hitam</h3>
+            </a>
+            <p>Rp 45.000</p>
+            <button class="add-to-cart-btn" onclick="addToCart('../images/jintan hitam.jpg', 'Jintan Hitam', 45000)">Tambahkan ke Keranjang</button>
+        </div>
+        <div class="product" data-name="c, ce, cen, ceng, cengk, cengke, cengkeh" data-price="60000">
+            <a class="product-link" href="detailproduk4.html">
+                <img alt="Produk Cengkeh" height="450" src="../images/cengkeh.jpg" width="450"/>
+                <h3>Cengkeh</h3>
+            </a>
+            <p>Rp 60.000</p>
+            <button class="add-to-cart-btn" onclick="addToCart('../images/cengkeh.jpg', 'Cengkeh', 60000)">Tambahkan ke Keranjang</button>
+        </div>
+        <div class="product" data-name="k, ka, kay, kayu, kayu m, kayu ma, kayu man, kayu mani, kayu manis" data-price="30000">
+            <a class="product-link" href="detailproduk5.html">
+                <img alt="Produk Kayu Manis" height="450" src="../images/kayu manis (1).jpg" width="450"/>
+                <h3>Kayu Manis</h3>
+            </a>
+            <p>Rp 30.000</p>
+            <button class="add-to-cart-btn" onclick="addToCart('../images/kayu manis (1).jpg', 'Kayu Manis', 30000)">Tambahkan ke Keranjang</button>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-toogle">
+        <p>Jika kamu adalah penjual,</p>
+        <a href="../bantuan/bantuan.html" class="link-hover">klik disini</a>
+    </div>
+</footer>
+
+<script src="../js/produk.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<html>
+ <head>
+  <title>
+   Admin Dashboard
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/produkadmin.css">
+  
+  <script>
+   function editRow(row) {
+            window.location.href = 'nextpage.html';
+        }
+
+        function saveRow(row) {
+            const cells = row.querySelectorAll('td');
+            cells.forEach((cell, index) => {
+                if (index > 0 && index < cells.length - 2) {
+                    const input = cell.querySelector('input');
+                    cell.textContent = input.value;
+                }
+            });
+            row.querySelector('.edit').style.display = 'inline';
+            row.querySelector('.delete').style.display = 'inline';
+            row.querySelector('.save').style.display = 'none';
+        }
+
+        function deleteRow(row) {
+            if (confirm('Apakah Anda yakin ingin menghapus baris ini? Tindakan ini tidak dapat dipulihkan.')) {
+                row.remove();
+            }
+        }
+
+        function addRow() {
+            window.location.href = 'nextpage.html';
+        }
+
+        function searchItem() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('table tbody tr');
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '';
+
+            rows.forEach(row => {
+                const itemName = row.cells[1].textContent.toLowerCase();
+                if (itemName.includes(searchTerm)) {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    resultItem.innerHTML = `
+                        <img src="${row.cells[5].querySelector('img').src}" alt="Product image" width="50" height="50">
+                        <div class="details">
+                            <h3>${row.cells[1].textContent}</h3>
+                            <p>${row.cells[2].textContent}</p>
+                            <p>Harga: ${row.cells[3].textContent}</p>
+                            <p>Stok: ${row.cells[4].textContent}</p>
+                        </div>
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                }
+            });
+
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        document.getElementById('searchInput').addEventListener('input', searchItem);
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+  </script>
+ </head>
+ <body>
+  <div class="sidebar">
+   <a href="nextpage.html">
+    <img alt="Admin profile picture" height="100" src="https://storage.googleapis.com/a1aa/image/A91Ssi6vwsbTCFkZzjOKfzbatIMIE2DlWyMufjfJrP0gBvqnA.jpg" width="100"/>
+   </a>
+   <h2>
+    admin 1
+   </h2>
+   <p>
+    Online
+   </p>
+   <a href="nextpage.html">
+    Produk
+   </a>
+   <a href="nextpage.html">
+    Transaksi
+   </a>
+   <a href="nextpage.html">
+    Pengguna
+   </a>
+  </div>
+  <div class="content">
+   <h1>
+    Produk
+   </h1>
+   <div class="toolbar">
+    <button onclick="addRow()">
+     Tambah
+    </button>
+    <div class="search-container">
+     <input id="searchInput" placeholder="Cari Produk" type="text"/>
+     <button onclick="searchItem()">
+      <i class="fas fa-search"></i>
+     </button>
+    </div>
+   </div>
+   <div class="table-container">
+    <table border="1">
+     <thead>
+      <tr>
+       <th>
+        No
+       </th>
+       <th>
+        Nama Produk
+       </th>
+       <th>
+        Deskripsi
+       </th>
+       <th>
+        Harga
+       </th>
+       <th>
+        Stok
+       </th>
+       <th>
+        Gambar
+       </th>
+       <th>
+        Tindakan
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        Andaliman
+       </td>
+       <td>
+        Andaliman 1Kg rempah khas dengan cita rasa pedas segar yang unik ideal untuk masakan Batak seperti arsik dan saksang, serta hidangan Nusantara lainnya. 
+        Dikemas higienis, cocok untuk kebutuhan kuliner skala besar seperti restoran dan katering.
+       </td>
+       <td>
+        Rp.100.000
+       </td>
+       <td>
+        20
+       </td>
+       <td>
+        <img alt="Product image" height="50" src="../images/andaliman.jpg" width="50"/>
+       </td>
+       <td class="actions">
+        <a class="edit" onclick="editRow(this.parentElement.parentElement)">
+         Ubah
+        </a>
+        <a class="delete" onclick="deleteRow(this.parentElement.parentElement)">
+         Hapus
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        Bunga Lawang
+       </td>
+       <td>
+        Bunga lawang dengan berat 100 gram ini memiliki aroma khas yang kuat dengan cita rasa manis dan sedikit pedas.
+        Ideal untuk masakan Asia seperti sup, semur, dan olahan daging.
+        Dikemas secara higienis, cocok untuk kebutuhan kuliner skala kecil hingga menengah.
+       </td>
+       <td>
+        Rp.20.000
+       </td>
+       <td>
+        54
+       </td>
+       <td>
+        <img alt="Product image" height="50" src="../images/bunga lawang.jpg" width="50"/>
+       </td>
+       <td class="actions">
+        <a class="edit" onclick="editRow(this.parentElement.parentElement)">
+         Ubah
+        </a>
+        <a class="delete" onclick="deleteRow(this.parentElement.parentElement)">
+         Hapus
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        Jintan
+       </td>
+       <td>
+        Jintan hitam 100 gram, atau habbatussauda, adalah biji rempah dengan aroma pedas dan rasa pahit yang kaya manfaat kesehatan.
+        Sering digunakan dalam kari, roti, dan salad, dikemas higienis dan cocok untuk keperluan dapur rumah maupun bisnis kuliner
+       </td>
+       <td>
+        Rp.45.000
+       </td>
+       <td>
+        20
+       </td>
+       <td>
+        <img alt="Product image" height="50" src="../images/jintan hitam.jpg" width="50"/>
+       </td>
+       <td class="actions">
+        <a class="edit" onclick="editRow(this.parentElement.parentElement)">
+         Ubah
+        </a>
+        <a class="delete" onclick="deleteRow(this.parentElement.parentElement)">
+         Hapus
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        Cengkeh
+       </td>
+       <td>
+        Cengkeh dengan berat 1 kg ini memiliki aroma hangat dan manis yang kuat, sangat cocok untuk masakan daging, kue, dan minuman hangat.
+        Dikemas higienis, ideal untuk kebutuhan rumah tangga, restoran, atau kafe.
+       </td>
+       <td>
+        Rp.60.000
+       </td>
+       <td>
+        55
+       </td>
+       <td>
+        <img alt="Product image" height="50" src="../images/cengkeh.jpg" width="50"/>
+       </td>
+       <td class="actions">
+        <a class="edit" onclick="editRow(this.parentElement.parentElement)">
+         Ubah
+        </a>
+        <a class="delete" onclick="deleteRow(this.parentElement.parentElement)">
+         Hapus
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        Kayu Manis
+       </td>
+       <td>
+        Kayu manis 500 gram dengan aroma manis hangat yang khas, cocok untuk kue, minuman, dan masakan kari.
+        Dikemas higienis untuk menjaga kesegaran, pas untuk keperluan dapur pribadi atau usaha kuliner skala kecil.
+       </td>
+       <td>
+        Rp.30.000
+       </td>
+       <td>
+        79
+       </td>
+       <td>
+        <img alt="Product image" height="50" src="../images/kayu manis (1).jpg" width="50"/>
+       </td>
+       <td class="actions">
+        <a class="edit" onclick="editRow(this.parentElement.parentElement)">
+         Ubah
+        </a>
+        <a class="delete" onclick="deleteRow(this.parentElement.parentElement)">
+         Hapus
+        </a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <div id="myModal" class="modal">
+    <div class="modal-content">
+     <span class="close" onclick="closeModal()">
+      &times;
+     </span>
+     <div id="searchResults" class="search-results">
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
