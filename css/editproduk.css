@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.sidebar {
+    width: 200px;
+    background-color: #3a3a3a;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    padding-top: 20px;
+}
+.sidebar img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.sidebar h2 {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+.sidebar p {
+    text-align: center;
+    color: #00ff00;
+}
+.sidebar a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 22px; /* Increased font size */
+    border-bottom: 2px solid #575757; /* Thicker border */
+    transition: background-color 0.3s, transform 0.1s;
+}
+.sidebar a:hover {
+    background-color: #575757;
+}
+.sidebar a:active {
+    transform: scale(0.98);
+}
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}
+.content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+.form-group button:active {
+    transform: scale(0.98);
+}
+.form-group button:hover {
+    background-color: #218838;
+}
+.success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+}
