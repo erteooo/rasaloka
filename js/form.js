@@ -1,5 +1,3 @@
-
-
 function showFeedback(message, isError = false) {
     const feedbackContainer = document.createElement('div');
     feedbackContainer.className = isError ? 'feedback-error' : 'feedback-success';
@@ -14,8 +12,8 @@ function showFeedback(message, isError = false) {
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
 
     if (!email || !password) {
         showFeedback('Email and Password cannot be empty.', true);
@@ -29,10 +27,10 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 document.getElementById('signup-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('signup-email').value;
-    const password = document.getElementById('signup-password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value.trim();
+    const confirmPassword = document.getElementById('confirm-password').value.trim();
 
     if (!username || !email || !password || !confirmPassword) {
         showFeedback('All fields must be filled.', true);
@@ -71,7 +69,12 @@ login.addEventListener("click", () => {
 });
 
 // Google login and signup functionality will be implemented here
-document.querySelector('.google-btn').addEventListener('click', () => {
-    // Implement Google login and signup functionality using Google OAuth API
-    console.log('Google login/signup button clicked');
+document.querySelector('.google-btn').addEventListener('click', async () => {
+    try {
+        const response = await fetch('https://accounts.google.com/.well-known/openid-configuration');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 });

@@ -26,6 +26,25 @@ body {
     display: flex;
     flex-direction: column;
     padding: 30px;
+    animation: fadeIn 1s ease, scaleUp 0.5s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 header {
@@ -41,18 +60,26 @@ header {
 }
 
 .login, .signup {
-    background: none;
+    background: liniaar-gradient(to right, #d09800, #ceae54);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border: none;
+    border-radius: 20px;
     font-size: 18px;
     cursor: pointer;
     color: #000000;
-    padding: 10px 20px;
-    transition: color 0.3s, border-bottom 0.3s;
+    padding: 10px 40px;
+    transition: background-color 0.3s ,color 0.3s, border-bottom 0.3s;
     position: relative;
 }
 
 .login:hover, .signup:hover {
     color: #d09800; /* Hover color */
+    background-color: #000000;
+}
+
+.login.active, .signup.active {
+    color: #d09800; /* Active color */
+    border-bottom: 2px solid #000000; /* Active border */
 }
 
 .slider {
@@ -99,13 +126,12 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    transition: color 0.3s, background 0.3s;
 }
 
 .clkbtn:hover {
     color: #d09800;
     background: linear-gradient(to right, #000000, #0a0f17); /* Darker gradient on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
 .forgot-password {
@@ -115,6 +141,10 @@ header {
     margin-top: 10px;
     display: block;
     text-align: center;
+}
+
+.forgot-password:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 .google-login, .google-signup {
