@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.sidebar {
+    width: 200px;
+    background-color: #3a3a3a;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    padding-top: 20px;
+}
+.sidebar img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.sidebar h2 {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+.sidebar p {
+    text-align: center;
+    color: #00ff00;
+}
+.sidebar a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 22px; /* Increased font size */
+    border-bottom: 2px solid #575757; /* Thicker border */
+    transition: background-color 0.3s, transform 0.1s;
+    }
+    .sidebar a:hover {
+        background-color: #575757;
+    }
+    .content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+    .table-container {
+        margin-top: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #ffcc00;
+    }
+    tr:nth-child(even) {
+        background-color: #ffffcc;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        border-radius: 10px;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .result-item {
+        background-color: white;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .notification {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4caf50;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
