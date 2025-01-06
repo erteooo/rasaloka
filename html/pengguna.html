@@ -1,197 +1,135 @@
+<!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Admin Dashboard - Pengguna
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/pengguna.css">
-  
- </head>
- <body>
-  <div class="sidebar">
-   <a href="nextpage.html">
-    <img alt="Admin " height="100" src="../images/profil.jpg" width="100"/>
-   </a>
-   <h2>
-    admin 1
-   </h2>
-   <p>
-    Online
-   </p>
-   <a href="produkadmin.html">
-    Produk
-   </a>
-   <a href="transaksiadmin.html">
-    Transaksi
-   </a>
-   <a href="pengguna.html">
-    Pengguna
-   </a>
-  </div>
-  <div class="content">
-   <h1 class="text-4xl font-bold mb-6">
-    Pengguna
-   </h1>
-   <div class="table-container">
-    <table border="1">
-     <thead>
-      <tr>
-       <th>
-        No
-       </th>
-       <th>
-        Nama Pengguna
-       </th>
-       <th>
-        Email
-       </th>
-       <th>
-        No HP
-       </th>
-       <th>
-        Alamat
-       </th>
-       <th>
-        Tindakan
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        Elis Andikasari
-       </td>
-       <td>
-        Elisand@gmail.com
-       </td>
-       <td>
-        081234567890
-       </td>
-       <td>
-        Jl. Bhayangkara No 1
-       </td>
-       <td>
-        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" onclick="banUser(this)">
-         Blokir
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        Bettanuary Danu
-       </td>
-       <td>
-        Danu@gmail.com
-       </td>
-       <td>
-        081234567891
-       </td>
-       <td>
-        Jl. Yos Sudarso No. 2
-       </td>
-       <td>
-        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" onclick="banUser(this)">
-         Blokir
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        Kurnia Dwi
-       </td>
-       <td>
-        Kurnia@gmail.com
-       </td>
-       <td>
-        081234567892
-       </td>
-       <td>
-        Jl. Slamet Riyadi No. 3
-       </td>
-       <td>
-        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" onclick="banUser(this)">
-         Blokir
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        Fatimah Azzara
-       </td>
-       <td>
-        Fatimahhh@gmail.com
-       </td>
-       <td>
-        081234567893
-       </td>
-       <td>
-        Jl. Pattimura No. 10
-       </td>
-       <td>
-        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" onclick="banUser(this)">
-         Blokir
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        Ramadhan
-       </td>
-       <td>
-        Ramaa@gmail.com
-       </td>
-       <td>
-        081234567894
-       </td>
-       <td>
-        Jl. Kebangkitan No. 22
-       </td>
-       <td>
-        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" onclick="banUser(this)">
-         Blokir
-        </button>
-       </td>
-      </tr>
-      <tr>
-     </tbody>
-    </table>
-   </div>
-  </div>
-  <div class="notification" id="notification">
-   Pengguna telah terbanned.
-  </div>
-  <script>
-   function banUser(button) {
-            // Show notification
-            const notification = document.getElementById('notification');
-            notification.style.display = 'block';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Pengguna</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/pengguna.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="nextpage.html">
+            <img src="../images/profil.jpg" alt="Admin profile picture" width="100" height="100"/>
+        </a>
+        <h2>admin 1</h2>
+        <p>Online</p>
+        <a href="produk.html">Produk</a>
+        <a href="transaksi.html">Transaksi</a>
+        <a href="pengguna.html">Pengguna</a>
+    </div>
+    <div class="content">
+        <h1>Pengguna</h1>
+        <div class="toolbar">
+            <div class="search-container">
+                <input id="searchInput" type="text" placeholder="Cari Nama Pengguna">
+                <button onclick="searchUser()"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Pengguna</th>
+                        <th>Email</th>
+                        <th>No HP</th>
+                        <th>Alamat</th>
+                        <th>Tindakan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Elis Andikasari</td>
+                        <td>Elisand@gmail.com</td>
+                        <td>081234567890</td>
+                        <td>Jl. Bhayangkara No 1</td>
+                        <td>
+                            <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" onclick="banUser(this)">
+                                Blokir
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bettanuary Danu</td>
+                        <td>Danu@gmail.com</td>
+                        <td>081234567891</td>
+                        <td>Jl. Yos Sudarso No. 2</td>
+                        <td>
+                            <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" onclick="banUser(this)">
+                                Blokir
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Kurnia Dwi</td>
+                        <td>Kurnia@gmail.com</td>
+                        <td>081234567892</td>
+                        <td>Jl. Slamet Riyadi No. 3</td>
+                        <td>
+                            <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" onclick="banUser(this)">
+                                Blokir
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal" id="userModal">
+            <div class="modal-content">
+                <span class="close" onclick="closeUserModal()">×</span>
+                <div id="userSearchResults"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function searchUser() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('table tbody tr');
+            const resultsContainer = document.getElementById('userSearchResults');
+            let found = false;
 
-            // Change button text to "Terblokir"
+            resultsContainer.innerHTML = '';
+
+            rows.forEach(row => {
+                const namaPengguna = row.cells[1].textContent.toLowerCase();
+                if (namaPengguna.includes(searchTerm)) {
+                    found = true;
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    resultItem.innerHTML = `
+                        <div>
+                            <h3>Nama: ${row.cells[1].textContent}</h3>
+                            <p>Email: ${row.cells[2].textContent}</p>
+                            <p>No HP: ${row.cells[3].textContent}</p>
+                            <p>Alamat: ${row.cells[4].textContent}</p>
+                        </div>`;
+                    resultsContainer.appendChild(resultItem);
+                }
+            });
+
+            document.getElementById('userModal').style.display = found ? 'block' : 'none';
+
+            if (!found) {
+                const noResults = document.createElement('div');
+                noResults.className = 'result-item';
+                noResults.innerHTML = '<p>Hasil tidak ditemukan. Masukkan nama pengguna yang valid.</p>';
+                resultsContainer.appendChild(noResults);
+            }
+        }
+
+        function closeUserModal() {
+            document.getElementById('userModal').style.display = 'none';
+        }
+
+        function banUser(button) {
             button.textContent = 'Terblokir';
             button.disabled = true;
-
-            // Hide notification after 3 seconds
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 3000);
+            alert('Pengguna telah diblokir.');
         }
-  </script>
- </body>
+    </script>
+</body>
 </html>
