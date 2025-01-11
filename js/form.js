@@ -1,15 +1,24 @@
+// Feedback utility
 function showFeedback(message, isError = false) {
     const feedbackContainer = document.createElement('div');
     feedbackContainer.className = isError ? 'feedback-error' : 'feedback-success';
     feedbackContainer.textContent = message;
     document.body.insertBefore(feedbackContainer, document.body.firstChild);
-    
+
     setTimeout(() => {
         feedbackContainer.remove();
     }, 3000);
 }
 
-document.getElementById('login-form').addEventListener('submit', function(event) {
+// Admin emails
+const adminEmails = [
+    'raditoktaviano24@gmail.com',
+    'elis.andksr@gmail.com',
+    'mahendradanu895@gmail.com'
+];
+
+// Login form handling
+document.getElementById('login-form').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const email = document.getElementById('email').value.trim();
@@ -20,14 +29,35 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         return;
     }
 
-    console.log('Login submitted:', { email, password });
-    showFeedback('Login successful! Welcome to RASALOKA.');
+    try {
+        const response = await fetch('/backend/routes/authRoutes', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            const redirectUrl = adminEmails.includes(email)
+                ? '../html/admin-dashboard.html'
+                : '../html/produk.html';
+
+            showFeedback('Login successful! Redirecting...');
+            window.location.href = redirectUrl;
+        } else {
+            showFeedback(data.message || 'Login failed. Please try again.', true);
+        }
+    } catch (error) {
+        console.error('Login Error:', error);
+        showFeedback('An error occurred. Please try again later.', true);
+    }
 });
 
-document.getElementById('signup-form').addEventListener('submit', function(event) {
+// Signup form handling
+document.getElementById('signup-form').addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    const username = document.getElementById('username').value.trim();
+    const username = document.getElementById('fullname').value.trim();
     const email = document.getElementById('signup-email').value.trim();
     const password = document.getElementById('signup-password').value.trim();
     const confirmPassword = document.getElementById('confirm-password').value.trim();
@@ -42,10 +72,27 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         return;
     }
 
-    console.log('Signup submitted:', { username, email, password });
-    showFeedback('Signup successful! Please login.');
+    try {
+        const response = await fetch('/api/auth/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, email, password })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            showFeedback('Signup successful! Please login.');
+            document.getElementById('signup-form').reset();
+        } else {
+            showFeedback(data.message || 'Signup failed. Please try again.', true);
+        }
+    } catch (error) {
+        console.error('Signup Error:', error);
+        showFeedback('An error occurred. Please try again later.', true);
+    }
 });
 
+// Form switching
 const signup = document.querySelector(".signup");
 const login = document.querySelector(".login");
 const slider = document.querySelector(".slider");
@@ -68,13 +115,15 @@ login.addEventListener("click", () => {
     loginForm.classList.remove('hidden'); // Show login form
 });
 
-// Google login and signup functionality will be implemented here
+// Google login and signup functionality
 document.querySelector('.google-btn').addEventListener('click', async () => {
     try {
         const response = await fetch('https://accounts.google.com/.well-known/openid-configuration');
         const data = await response.json();
-        console.log(data);
+        console.log('Google Auth:', data);
+        showFeedback('Google login feature is under development.');
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Google Login Error:', error);
+        showFeedback('An error occurred during Google login.', true);
     }
 });

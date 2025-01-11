@@ -88,3 +88,23 @@ function searchProduct() {
         hideCartPopup();
     });
 });
+
+async function fetchProducts() {
+    const response = await fetch('http://localhost:5000/api/products');
+    const products = await response.json();
+
+    const container = document.getElementById('productContainer');
+    container.innerHTML = products.map(product => `
+        <div class="product">
+            <img src="${product.image}" alt="${product.name}" />
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p>Price: Rp ${product.price}</p>
+            <p>Stock: ${product.stock}</p>
+            <p>Created At: ${new Date(product.created_at).toLocaleString()}</p>
+        </div>
+    `).join('');
+}
+
+fetchProducts();
+

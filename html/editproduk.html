@@ -7,6 +7,23 @@
   <link rel="stylesheet" href="../css/editproduk.css" >
   
   <script>
+    button.addEventListener('click', function(){
+        if (document.querySelector('input[name="nama_produk"]').value == "") {
+            alert("Nama Produk Tidak Boleh Kosong");
+            return false;
+        }
+        else if (document.querySelector('input[name="harga"]').value == "") {
+            alert("Harga Tidak Boleh Kosong");
+            return false;
+        }
+        else if (document.querySelector('input[name="stok"]').value == "") {
+            alert("Stok Tidak Boleh Kosong");
+            return false;
+        }
+        else {
+            return true;
+        }
+    });
    function showSuccessMessage() {
             const button = document.querySelector('button[type="submit"]');
             button.addEventListener('click', function(event) {
