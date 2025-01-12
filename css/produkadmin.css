@@ -34,8 +34,8 @@ body {
     padding: 10px 20px;
     color: white;
     text-decoration: none;
-    font-size: 22px; /* Increased font size */
-    border-bottom: 2px solid #575757; /* Thicker border */
+    font-size: 22px;
+    border-bottom: 2px solid #575757;
     transition: background-color 0.3s, transform 0.1s;
 }
 .sidebar a:hover {
@@ -49,7 +49,7 @@ body {
     padding: 20px;
 }
 .content h1 {
-    font-size: 24px;
+    font-size: 40px;
     margin-bottom: 20px;
 }
 .toolbar {
@@ -76,12 +76,14 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
+    width: 262px; /* Menentukan lebar kontainer pencarian */
 }
 .search-container input {
     border: none;
     padding: 10px;
     outline: none;
     flex-grow: 1;
+    font-size: 16px; /* Menyesuaikan ukuran font input */
 }
 .search-container button {
     border: none;
@@ -91,6 +93,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 40px; /* Menyesuaikan tinggi tombol dengan input */
+    width: 40px;  /* Mengatur lebar tombol supaya sesuai dengan ikon */
+}
+.search-container button i {
+    font-size: 18px; /* Ukuran ikon pencarian yang pas */
 }
 .search-container button:hover {
     background-color: #e6b800;
@@ -175,15 +182,11 @@ tr:nth-child(even) {
 }
 .search-results .result-item img {
     margin-right: 10px;
-    border-radius: 5px;
 }
-.search-results .result-item .details {
-    flex-grow: 1;
-}
-.search-results .result-item .details h3 {
+.search-results .result-item h3 {
     margin: 0;
     font-size: 18px;
 }
-.search-results .result-item .details p {
+.search-results .result-item p {
     margin: 5px 0;
 }
