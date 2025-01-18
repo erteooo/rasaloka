@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 const fs = require('fs');  // Add fs module to read files
 
 const app = express();
-const PORT = 6003;
+const PORT = 6004;
 
 // Middleware
 app.use(cors());
